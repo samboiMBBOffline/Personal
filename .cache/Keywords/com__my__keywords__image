@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "85C9B855EBF220A66220C0B8D1566BC2",
+  "keywordClasses": [
+    {
+      "name": "com.my.keywords.image",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
