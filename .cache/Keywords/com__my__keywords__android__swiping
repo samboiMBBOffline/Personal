@@ -1,0 +1,30 @@
+{
+  "keywordFileContentHash": "B3D71857A17B7EF04A3BB2B4D2B9E762",
+  "keywordClasses": [
+    {
+      "name": "com.my.keywords.android.swiping",
+      "keywordMethods": [
+        {
+          "name": "scrollListToElementWithText",
+          "parameters": [
+            {
+              "name": "elementText",
+              "initialExpression": "",
+              "type": {
+                "fullClassName": "java.lang.String",
+                "unresolvedClassName": "String",
+                "isArray": false,
+                "isGnericsPlaceHolder": false,
+                "hasImmutableClassName": false,
+                "genericsTypes": [],
+                "errorOnParsing": false
+              }
+            }
+          ],
+          "javadoc": ""
+        }
+      ]
+    }
+  ],
+  "javadocParsed": true
+}
