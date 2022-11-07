@@ -201,7 +201,7 @@ if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData(
     'Youre set...'
     Mobile.verifyEqual(Mobile.getText(findTestObject('Youre Set'), 0), findTestData('TestData').getValue(4, 21))
 
-    Mobile.takeScreenshot('PopupFirstTimeLogin.png')
+    Mobile.takeScreenshot('Screenshot/Login/PopupFirstTimeLogin.png')
 
     Mobile.tap(findTestObject('Text', [('Verify') : 'Dismiss']), 0)
 }

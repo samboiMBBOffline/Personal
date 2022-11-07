@@ -3,9 +3,9 @@
    <description></description>
    <name>PrecedingText</name>
    <tag></tag>
-   <elementGuidId>50177b9a-cf38-4e95-9cd9-c11f8e0c2c70</elementGuidId>
+   <elementGuidId>82b67086-4d6f-4654-934a-2f098d3cd8db</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <locator>//*[@class = 'android.widget.TextView' and (@text = '${Verify}')]//preceding-sibling::android.widget.TextView</locator>
+   <locator>(//*[@class = 'android.widget.TextView' and (@text = '${Verify}')]//preceding-sibling::android.widget.TextView)[1]</locator>
    <locatorStrategy>XPATH</locatorStrategy>
 </MobileElementEntity>

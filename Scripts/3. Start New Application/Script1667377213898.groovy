@@ -33,19 +33,19 @@ Mobile.tapAtPosition(250, 1700)
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 36)]), 0), findTestData(
         'TestData').getValue(4, 36))
 
-'To help speed up...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 37)]), 0), findTestData(
-        'TestData').getValue(4, 37))
+//'To help speed up...'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 37)]), 0), findTestData(
+//        'TestData').getValue(4, 37))
 
 Mobile.takeScreenshot('Screenshot/Apply/1stScreen.png')
 
-'please fill up...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/applicantsdetails'), 0), findTestData('TestData').getValue(
-        4, 38))
-
-'If theyre an existing...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/ifexisting'), 0), findTestData('TestData').getValue(
-        4, 39))
+//'please fill up...'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/applicantsdetails'), 0), findTestData('TestData').getValue(
+//        4, 38))
+//
+//'If theyre an existing...'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/ifexisting'), 0), findTestData('TestData').getValue(
+//        4, 39))
 
 'Number of Applicant'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 40)]), 0), findTestData(
@@ -117,6 +117,8 @@ if (Choice == '1 Applicant') {
     Mobile.setText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(4, 56)]), findTestData('TestData').getValue(
             5, 54), 0)
 
+	Mobile.verifyEqual(findTestObject('Object Repository/InputNo',[('No'):1]),findTestData('TestData').getValue(5,56))
+	
     Mobile.scrollToText('Next', FailureHandling.OPTIONAL)
 
     'FATCA..'
@@ -143,6 +145,8 @@ if (Choice == '1 Applicant') {
 
     'tap No CRS'
     Mobile.tap(findTestObject('Object Repository/Apply/NoCRS'), 0)
+	
+	
 
     'verify yes crs exist'
     Mobile.verifyElementExist(findTestObject('Object Repository/Apply/YesCRS'), 0)
@@ -309,3 +313,26 @@ if (Choice == '1 Applicant') {
 'tap next'
 Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
 
+if(Mobile.verifyElementExist(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,60)]),0,FailureHandling.OPTIONAL))
+{
+	'Existing Customer Detected'
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 60)]), 0), findTestData(
+			'TestData').getValue(5, 60))
+	
+	'The applicant is an existing...'
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 61)]), 0), findTestData(
+		'TestData').getValue(5, 61))
+	
+	'Existing Customer Detected'
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 60)]), 0), findTestData(
+			'TestData').getValue(5, 60))
+	
+	'Create Application'
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 62)]), 0), findTestData(
+		'TestData').getValue(5, 62))
+	
+	Mobile.takeScreenshot('Screenshot/Apply/Existing.png')
+	
+	Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 62)]), 0)
+	
+}
