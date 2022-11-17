@@ -30,6 +30,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.takeScreenshot('Sreenshot/Step4/First.png')
 
+Mobile.tap(findTestObject('Object Repository/BackButtonStep1'), 0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 101)]), 0), findTestData(
+	'TestData').getValue(2, 101))
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
+
 'Additional information'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 106)]), 0), findTestData(
 	'TestData').getValue(4, 106))
@@ -38,7 +46,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 107)]), 0), findTestData(
 	'TestData').getValue(4, 107))
 
-Mobile.tap(findTestObject('Text', [('Verify') : 'Please Select']), 0)
+Mobile.tap(findTestObject('FollowingText', [('Verify') :  findTestData('TestData').getValue(4, 107)]), 0)
 
 Mobile.scrollToText(findTestData('TestData').getValue(5,107),FailureHandling.STOP_ON_FAILURE)
 
@@ -49,35 +57,38 @@ Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValu
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 108)]), 0), findTestData(
 	'TestData').getValue(4, 108))
 
-Mobile.tap(findTestObject('Text', [('Verify') : 'Please Select']), 0)
+Mobile.tap(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 108)]), 0)
 
 Mobile.scrollToText(findTestData('TestData').getValue(5,108),FailureHandling.STOP_ON_FAILURE)
 
 'Tap chosen one'
 Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5,108)]), 0)
 
-'Is the applicant purchasing...'
+'Is the applicant going to be the...'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 109)]), 0), findTestData(
 	'TestData').getValue(4, 109))
 
 Mobile.tap(findTestObject('Object Repository/Apply/No Button', [('No') : 1]), 0)
 
-'Does the applicant...'
+Mobile.tap(findTestObject('Object Repository/Apply/Yes Button', [('No') : 1]), 0)
+
+
+
+'Is the applicant purchasing...'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 110)]), 0), findTestData(
 	'TestData').getValue(4, 110))
 
+Mobile.tap(findTestObject('Object Repository/Apply/Yes Button', [('No') : 2]), 0)
+
 Mobile.tap(findTestObject('Object Repository/Apply/No Button', [('No') : 2]), 0)
 
-'Who will be the owner(s) of the property?'
+'Does the applicant have any other pending...'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 111)]), 0), findTestData(
 	'TestData').getValue(4, 111))
 
-Mobile.tap(findTestObject('Text', [('Verify') : 'Please Select']), 0)
+Mobile.tap(findTestObject('Object Repository/Apply/Yes Button', [('No') : 3]), 0)
 
-Mobile.scrollToText(findTestData('TestData').getValue(5,111),FailureHandling.STOP_ON_FAILURE)
-
-'Tap chosen one'
-Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5,111)]), 0)
+Mobile.tap(findTestObject('Object Repository/Apply/No Button', [('No') : 3]), 0)
 
 Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']), 0)
 

@@ -36,13 +36,60 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.takeScreenshot('Sreenshot/Step1/First.png')
 
+Mobile.tap(findTestObject('Object Repository/BackButtonStep1'),0)
+
+Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 59)]), 0)
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Next']),0)
+
+
+
+
 'Name'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 62)]), 0), findTestData(
         'TestData').getValue(4, 62))
 
 'get users name'
-Name = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
+Name = Mobile.getText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
                 4, 62)]), 0)
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+                4, 62)]),'@ \'/,.',0)
+
+Mobile.tap(findTestObject('Text',[('Verify'),'Save & Next']),0)
+
+Mobile.verifyElementNotExist(findTestObject('Text',[('Verify'):'Please remove invalid special characters.']),3)
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation1.png')
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 62)]),'MA',0)
+
+Mobile.tap(findTestObject('Text',[('Verify'),'Save & Next']),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Name must contain at least 3 alphabetical characters and space(s) only.']),0),'Name must contain at least 3 alphabetical characters and space(s) only.')
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation2.png')
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 62)]),'   ',0)
+
+Mobile.tap(findTestObject('Text',[('Verify'),'Save & Next']),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Name must not contain leading/double spaces.']),0),'Name must not contain leading/double spaces.')
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation3.png')
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 62)]),'1123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456789123456',0)
+
+NameLength = Mobile.getText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 62)]),0)
+
+Mobile.verifyEqual(150,NameLength.length())
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 62)]),Name,0)
 
 'ID Type'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 45)]), 
@@ -60,8 +107,27 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Input', [('Verify') : findTest
 Mobile.verifyEqual(Mobile.getText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(5, 56)]), 0), 
     findTestData('TestData').getValue(5, 56))
 
+'get IC'
+NRIC1 = Mobile.getText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 55)]), 0)
 
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 55)]),'123',0)
 
+Mobile.tap(findTestObject('Text',[('Verify'),'Save & Next']),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Your ID must contain at least 4 digits and alphabets only.']),0),'Your ID must contain at least 4 digits and alphabets only.')
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation4.png')
+
+Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+	4, 55)]),'   ',0)
+
+Mobile.tap(findTestObject('Text',[('Verify'),'Save & Next']),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Name must not contain leading/double spaces.']),0),'Name must not contain leading/double spaces.')
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation5.png')
 
 'Religion'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 64)]), 0), findTestData(
@@ -220,13 +286,22 @@ if ((Code == 'Please Select') || (Code != findTestData('TestData').getValue(5, 6
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 70)]), 0), findTestData(
         'TestData').getValue(4, 70))
 
-'Get Phone Number'
-Phone = Mobile.getText(findTestObject('Object Repository/InputNo', [('No') : 1]), 0)
+Mobile.setText(findTestObject('Object Repository/InputNo', [('No') : 1]),'12345678' ,0)
 
-if ((Phone == '') || (Phone.length() < 9)) {
-    Mobile.setText(findTestObject('Object Repository/InputNo', [('No') : 1]), findTestData('TestData').getValue(5, 70), 
-        0)
-}
+Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+
+Mobile.verifyEqual(Mobile.getText('Text',[('Verify'):'Mobile number must consist of minimum 9 digits.']),'Mobile number must consist of minimum 9 digits.')
+
+Mobile.takeScreenshot('Screenshot/Step1/Validation6.png')
+
+Mobile.setText(findTestObject('Object Repository/InputNo', [('No') : 1]),'12345678123123123123' ,0)
+
+CheckLengthPhone = Mobile.getText(findTestObject('Object Repository/InputNo', [('No') : 1]),0)
+
+Mobile.verifyEqual(10,CheckLengthPhone.length())
+
+Mobile.setText(findTestObject('Object Repository/InputNo', [('No') : 1]),'142255681' ,0)
+
 
 'Resident Status'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 71)]), 0), findTestData(
