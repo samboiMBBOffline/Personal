@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>TestData</name>
+   <name>Validation</name>
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>79e897a0-eb4b-4dc4-a1a0-1ce62a552ed7</dataFileGUID>
+   <dataFileGUID>fa1e4369-36b7-4bde-8f69-a04b84b0596c</dataFileGUID>
    <dataSourceUrl>D:\Katalon\Saves\New SF\Personal\SFProject.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>Sheet2</sheetName>
+   <sheetName>Validation</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

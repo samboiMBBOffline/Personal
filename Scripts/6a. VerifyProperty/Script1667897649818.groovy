@@ -16,10 +16,4 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import java.util.ArrayList
 
-Mobile.startExistingApplication('com.maybanksfapp.sit',FailureHandling.OPTIONAL)
-
-Mobile.verifyElementExist(findTestObject('AnyText',[('Verify'):'Login to Sales Force']),0)
-
-Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Login to Sales Force']),0)

@@ -16,6 +16,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.util.ArrayList
 
 'Confirmation'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 112)]), 0), findTestData(
@@ -24,195 +25,258 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.takeScreenshot('Screenshot/Confirmation/Screen.png',FailureHandling.STOP_ON_FAILURE)
 
 
+Mobile.tap(findTestObject('Object Repository/BackButtonStep1'),0)
+
+'Step 5 of 5'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 106)]), 0), findTestData(
+		'TestData').getValue(2, 106))
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
 'Personal Details'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 62)]), 0), findTestData(
 		'TestData').getValue(4, 62))
 
-'get users name'
-Name = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 62)]), 0)
+Mobile.takeScreenshot('Screenshot/Confirmation/Personal Details.png')
 
-'ID Type'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 45)]),
-		0), findTestData('TestData').getValue(4, 45))
+i=4
+j=0
+ArrayList<String> NameList = new ArrayList<String>()
+while (i<28) {
+	NameList.add(Mobile.getText(findTestObject('TextNo',[('No'):i]),0))
+	println(NameList[j])
+	i++
+	j++
+}
 
-'ID Type Chosen'
-IDType = Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 54)]), 0)
+Mobile.tap(findTestObject('EditNo',[('No'):1]),0)
+for(i=0;i<28;i++) {
+Mobile.scrollToText(NameList[i],FailureHandling.CONTINUE_ON_FAILURE)
+Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):NameList[i]]),0),NameList[i])
+}
 
-'ID Number'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(4, 55)]), 0),
-	findTestData('TestData').getValue(4, 55))
-
-'ID Number set'
-IDNo =Mobile.getText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(5, 56)]), 0)
-
-'Religion'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 64)]), 0), findTestData(
-		'TestData').getValue(4, 64))
-
-'Chosen Religion'
-Religion = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 64)]), 0)
-
-'Salutation'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 65)]), 0), findTestData(
-		'TestData').getValue(4, 65))
-
-'Chosen Salutation'
-Salutation = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 65)]), 0)
-
-'Gender'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 66)]), 0), findTestData(
-		'TestData').getValue(4, 66))
-
-'Chosen Gender'
-Gender = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 66)]), 0)
-
-'Education'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 67)]), 0), findTestData(
-		'TestData').getValue(4, 67))
-
-'Chosen Education'
-Education = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 67)]), 0)
-
-'Marital Status'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 68)]),
-		0), findTestData('TestData').getValue(4, 68))
-
-'Chosen Marital Status'
-Marital = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 68)]), 0)
-
-'Phone Number'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 70)]), 0), findTestData(
-		'TestData').getValue(4, 70))
-
-'Get Phone Number'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 70)]), 0),findTestData('TestData').getValue(4,70))
-
-'Resident Status'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 71)]), 0), findTestData(
-		'TestData').getValue(4, 71))
-
-'Chosen Resident Status'
-Resident = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 71)]), 0)
-
-'Employment Status'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 74)]), 0), findTestData(
-		'TestData').getValue(4, 72))
-
-'Chosen Employment Status'
-Employment = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 72)]), 0)
-
-'Business Type'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 73)]), 0), findTestData(
-		'TestData').getValue(4, 73))
-
-'Chosen Business Type'
-Business = Mobile.getText(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(
-				4, 73)]), 0)
-
-Mobile.tap(findTestObject('Object Repository/FollowingText',[('Verify'):findTestData('TestData').getValue(4,62)]),0)
-
-Mobile.scrollToText(Name,FailureHandling.STOP_ON_FAILURE)
-	
-Mobile.verifyEqual(Mobile.getText(findTestObject('Input',[('Verify'):Name]),0),Name)
-
-Mobile.takeScreenshot('Screenshot/Confirmation/Edit1')
-
-Mobile.scrollToText(IDType,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):IDType]),0),IDType)
-
-Mobile.scrollToText(IDNo,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Input',[('Verify'):IDNo]),0),IDNo)
-
-Mobile.scrollToText(Religion,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Religion]),0),Religion)
-
-Mobile.scrollToText(Salutation,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Salutation]),0),Salutation)
-
-Mobile.scrollToText(Gender,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Gender]),0),Gender)
-
-Mobile.scrollToText(Education,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Education]),0),Education)
-
-Mobile.scrollToText(Marital,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Marital]),0),Marital)
-
-Mobile.scrollToText(Resident,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Resident]),0),Resident)
-
-Mobile.scrollToText(Employment,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Employment]),0),Employment)
-
-Mobile.scrollToText(Business,FailureHandling.STOP_ON_FAILURE)
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Save']),0),'Save')
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Business]),0),Business)
-
-Mobile.scrollToText('Customer Onboarding',FailureHandling.STOP_ON_FAILURE)
-
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):1]),0)
+Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
 
 'Back to confirmation screen'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 112)]), 0), findTestData(
 	'TestData').getValue(2, 112))
 
-'Home and Mailing Address'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 114)]), 0), findTestData(
-	'TestData').getValue(4, 114))
+Mobile.dragAndDrop(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,114)]),findTestObject('Text',[('Verify'):'Personal Details']),10)
 
-'Country'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 114)]), 0), findTestData(
-	'TestData').getValue(4, 114))
+Mobile.takeScreenshot('Screenshot/Confirmation/Home and Mailing Address.png')
 
-'Country Name'
-CountryName1 = Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4,114)]), 0)
+i=3
+j=0
+ArrayList<String> AddressList = new ArrayList<String>()
+while (i<11) {
+	AddressList.add(Mobile.getText(findTestObject('TextNo',[('No'):i]),0))
+	println(AddressList[j])
+	i++
+	j++
+}
+Mobile.tap(findTestObject('EditNo',[('No'):1]),0)
 
-'Home Address'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 116)]), 0), findTestData(
-	'TestData').getValue(4, 116))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):AddressList[0]]),0),AddressList[0])
 
-'Address new format'
-Mobile.verifyEqual(Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(5, 116)]), 0), findTestData(
-	'TestData').getValue(5, 114))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):AddressList[1]]),0),AddressList[1])
 
-'Mailing Address Country'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 117)]), 0), findTestData(
-	'TestData').getValue(4, 117))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):AddressList[2]]),0),AddressList[2])
 
-'Country Name'
-CountryName2 = Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 117)]), 0)
 
-'Mailing Address'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 118)]), 0), findTestData(
-	'TestData').getValue(4, 118))
 
-'Address new format'
-Mobile.verifyEqual(Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 118)]), 0), findTestData(
-	'TestData').getValue(5, 114))
+A = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'Home Address Line 1']),0)
 
-Mobile.tap(findTestObject('FollowingText',[('Verify'):findTestData('TestData').getValue(4,114)]),0)
+B = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'Home Address Line 2']),0)
 
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 118)]), 0), findTestData(
-	'TestData').getValue(4, 118))
+C = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'City']),0)
+
+D = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'Postcode']),0)
+
+Mobile.scrollToText(findTestData('TestData').getValue(4,81),FailureHandling.OPTIONAL)
+
+E = Mobile.getText(findTestObject('FollowingText',[('Verify'):'State']),0)
+
+F = A + (', ' + (B + (', ' + (C+( ', '+(D+ (', '+(E+ (', ' +AddressList[1])))))))))
+
+if (Mobile.verifyEqual(AddressList[3],F)) {
+	
+	Mobile.verifyElementNotExist(findTestObject('Object Repository/2nd Field not exist'),0)
+}
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
+
+Mobile.dragAndDrop(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,83)]),findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,114)]),10)
+
+Mobile.takeScreenshot('Screenshot/Confirmation/Employment Details.png')
+
+'Employment Details'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,83)]),0),findTestData('TestData').getValue(4,83))
+
+i=3
+j=0
+ArrayList<String> EmploymentDeets = new ArrayList<String>()
+while (i<15) {
+	EmploymentDeets.add(Mobile.getText(findTestObject('TextNo',[('No'):i]),0))
+	println(EmploymentDeets[j])
+	i++
+	j++
+}
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Edit']),0)
+
+for (i=0;i<7;i++) {
+	
+	Mobile.scrollToText(EmploymentDeets[i],FailureHandling.CONTINUE_ON_FAILURE)
+	
+	Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):EmploymentDeets[i]]),0),EmploymentDeets[i])
+}
+	
+A1 = Mobile.getText(findTestObject('Object Repository/Apply/DurationofService',[('No'):1]),0)
+
+A2 = Mobile.getText(findTestObject('Object Repository/Apply/DurationofService',[('No'):2]),0)
+
+A3 = A1 + (' ' + A2)
+
+Mobile.verifyEqual(EmploymentDeets[7],A3)
+
+Mobile.scrollToText('Postcode',FailureHandling.OPTIONAL)
+
+Mobile.takeScreenshot('Screenshot/Confirmation/OfficeAddy.png')
+
+Mobile.scrollToText('Save',FailureHandling.OPTIONAL)
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
+
+Mobile.dragAndDrop(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,101)]),findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,83)]),10)
+
+Mobile.takeScreenshot('Screenshot/Confirmation')
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,101)]),0),findTestData('TestData').getValue(4,101))
+
+i=3
+j=0
+ArrayList<String> IncomeDeets = new ArrayList<String>()
+while (i<9) {
+	IncomeDeets.add(Mobile.getText(findTestObject('TextNo',[('No'):i]),0))
+	println(IncomeDeets[j])
+	i++
+	j++
+}
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Edit']),0)
+
+Mobile.tap(findTestObject('Object Repository/BackButtonStep1'),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,101)]),0),findTestData('TestData').getValue(4,101))
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Edit']),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,101)]),0),findTestData('TestData').getValue(4,101))
+
+Mobile.takeScreenshot('Screenshot/Confirmation/MGI screen.png')
+
+'MGI'
+Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[0]]),0),IncomeDeets[0])
+
+'amount without RM'
+Mobile.verifyEqual((Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[1]]),0)).substring(3),(IncomeDeets[1]).substring(3))
+
+'Existing Home Financing'
+Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[2]]),0),IncomeDeets[2])
+
+'amount of home'
+Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[3]]),0),IncomeDeets[3])
+
+'Nonbank commitments'
+Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[4]]),0),IncomeDeets[4])
+
+'amount non commitments without RM'
+Mobile.verifyEqual((Mobile.getText(findTestObject('AnyText',[('Verify'):IncomeDeets[5]]),0)).substring(3),(IncomeDeets[5]).substring(3))
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
+
+Mobile.scrollToText(findTestData('TestData').getValue(4,111),FailureHandling.OPTIONAL)
+
+'Add info'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Additional Information']),0),'Additional Information')
+
+'Primary Income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,107)]),0), findTestData('TestData').getValue(4,107))
+
+'Income'
+Info1 = Mobile.getText(findTestObject('PrecedingText',[('Verify'):findTestData('TestData').getValue(4,107)]),0)
+
+'Primary SOW income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,108)]),0), findTestData('TestData').getValue(4,108))
+
+'SOW Income'
+Info2 = Mobile.getText(findTestObject('PrecedingText',[('Verify'):findTestData('TestData').getValue(4,108)]),0)
+
+'Is applicant going to be sole owner...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,109)]),0), findTestData('TestData').getValue(4,109))
+
+Info3 = Mobile.getText(findTestObject('PrecedingText',[('Verify'):findTestData('TestData').getValue(4,109)]),0)
+
+
+'Is applicant purchasing more than 1...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,110)]),0), findTestData('TestData').getValue(4,110))
+
+Info4 = Mobile.getText(findTestObject('PrecedingText',[('Verify'):findTestData('TestData').getValue(4,110)]),0)
+
+
+'does the applicant have pending...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,111)]),0), findTestData('TestData').getValue(4,111))
+
+Info5 = Mobile.getText(findTestObject('PrecedingText',[('Verify'):findTestData('TestData').getValue(4,111)]),0)
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Edit']),0)
+
+
+'Add info'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Additional Information']),0),'Additional Information')
+
+'Primary Income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,107)]),0), findTestData('TestData').getValue(4,107))
+
+'Income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Info1]),0), Info1)
+
+'Primary SOW income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,108)]),0), findTestData('TestData').getValue(4,108))
+
+'SOW Income'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Info2]),0), Info2)
+
+'Is applicant going to be sole owner...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,109)]),0), findTestData('TestData').getValue(4,109))
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Info3]),0), Info3)
+
+
+'Is applicant purchasing more than 1...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,110)]),0), findTestData('TestData').getValue(4,110))
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Info4]),0), Info4)
+
+
+'does the applicant have pending...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,111)]),0), findTestData('TestData').getValue(4,111))
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):Info5]),0), Info5)
+
+Mobile.takeScreenshot('Screenshot/Confirmation/Additional Info 2.png')
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Confirm & Continue']),0)
+
+
+
+
+
+
+
+
 
 
 

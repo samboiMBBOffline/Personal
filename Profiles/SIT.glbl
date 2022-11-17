@@ -9,4 +9,9 @@
       <initValue>'com.maybanksfapp.sit'</initValue>
       <name>startAPP</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[]</initValue>
+      <name>Aisam</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
