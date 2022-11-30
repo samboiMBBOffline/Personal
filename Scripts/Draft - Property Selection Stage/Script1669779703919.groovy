@@ -23,43 +23,43 @@ if (Mobile.verifyElementExist(findTestObject('TotalCases'), 0, FailureHandling.O
 	Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 27)]), 0)
 }
 
-Mobile.scrollToText(findTestData('Draft').getValue(4, 6), FailureHandling.OPTIONAL)
+Mobile.scrollToText(findTestData('Draft').getValue(4, 8), FailureHandling.OPTIONAL)
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility.png')
 
-'Pending Applicant\'s Consent'
-Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 6)]), 0)
+'Pending Applicant\'s Eligibility'
+Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 8)]), 0)
 
-'Pending Applicant\'s Consent'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 6)]), 0), findTestData(
-		'Draft').getValue(4, 6))
+'Pending Applicant\'s Eligibility'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 8)]), 0), findTestData(
+		'Draft').getValue(4, 8))
 
 CustName = Mobile.getText(findTestObject('PrecedingText', [('Verify') : 'STP ID: ']), 0)
 
 CustID = Mobile.getText(findTestObject('FollowingText', [('Verify') : 'STP ID: ']), 0)
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent1.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility1.png')
 
 DateUpdated = (Mobile.getText(findTestObject('Draft/startswith',[('Verify'):'Updated:']),0)).substring(8)
 
-'Pending Applicant\'s Consent'
-Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 6)]), 0)
+'Pending Applicant\'s Eligibility'
+Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 8)]), 0)
 
 'Kindly obtain your applciant..'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 7)]), 0), findTestData(
-	'Draft').getValue(4, 7))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(4, 9)]), 0), findTestData(
+	'Draft').getValue(4, 9))
 
-Date2 = Mobile.getText(findTestObject('PrecedingText', [('Verify') : findTestData('Draft').getValue(4, 7)]), 0)
+Date2 = Mobile.getText(findTestObject('PrecedingText', [('Verify') : findTestData('Draft').getValue(4, 9)]), 0)
 
-Mobile.verifyEqual(Mobile.getText(findTestObject('PrecedingText', [('Verify') : Date2]), 0),findTestData('Draft').getValue(4, 6))
+Mobile.verifyEqual(Mobile.getText(findTestObject('PrecedingText', [('Verify') : Date2]), 0),findTestData('Draft').getValue(4, 8))
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent2.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility2.png')
 
 'Application Details'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(2, 3)]), 0), findTestData(
 		'Draft').getValue(2, 3))
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent3.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility3.png')
 
 'Personal Details'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 62)]), 0), findTestData(
@@ -91,7 +91,7 @@ for(i=1;i<13;i++) {
 	
 		println(Input[i-1])
 	}
-Mobile.takeScreenshot('Screenshot/Draft/Consent4.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility4.png')
 'Name same'
 Mobile.verifyEqual(CustName,Input[0])
 
@@ -117,7 +117,7 @@ for(i=13;i<17;i++) {
 			println(Input[i-1])
 		}
 	
-Mobile.takeScreenshot('Screenshot/Draft/Consent5.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility5.png')
 		
 'tap home address'
 Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,114)]),0)
@@ -135,7 +135,7 @@ for(i=17;i<24;i++) {
 			println(Input[i-1])
 		}
 
-		Mobile.takeScreenshot('Screenshot/Draft/Consent6.png')
+		Mobile.takeScreenshot('Screenshot/Draft/Eligibility6.png')
 		
 'tap employment details'
 Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,83)]),0)
@@ -153,7 +153,7 @@ for(i=24;i<28;i++) {
 			println(Input[i-1])
 		}
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent7.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility7.png')
 
 Mobile.verifyMatch(Input[23],'RM.*',FailureHandling.CONTINUE_ON_FAILURE)
 
@@ -178,43 +178,23 @@ for(i=28;i<32;i++) {
 			println(Input[i-1])
 		}
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent8.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility8.png')
 
 Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
 
 Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(5, 4)]), 0)
 
-'Submit Consent'
-Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(5, 7)]), 0)
+'Submit Eligibility'
+Mobile.tap(findTestObject('Text', [('Verify') : findTestData('Draft').getValue(5, 9)]), 0)
 
-'whats your cust preferred method...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Preferred Method'), 0),
-	findTestData('TestData').getValue(4, 119))
+'Property details'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,144)]),0),findTestData('TestData').getValue(4,144))
 
-Mobile.takeScreenshot('Screenshot/Draft/Consent9.png')
+Mobile.takeScreenshot('Screenshot/Draft/Eligibility9.png')
 
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Mobile.tap(findTestObject('Text', [('Verify') : 'Save Now']), 0)
 
 
 
