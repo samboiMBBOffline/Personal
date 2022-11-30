@@ -33,18 +33,20 @@ Mobile.tapAtPosition(250, 1700)
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 36)]), 0), findTestData(
         'TestData').getValue(4, 36))
 
-//'To help speed up...'
-//Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 37)]), 0), findTestData(
-//        'TestData').getValue(4, 37))
+'Before we proceed...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 37)]), 0), findTestData(
+        'TestData').getValue(4, 37))
+
 Mobile.takeScreenshot('Screenshot/Apply/1stScreen.png')
 
-//'please fill up...'
-//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/applicantsdetails'), 0), findTestData('TestData').getValue(
-//        4, 38))
-//
-//'If theyre an existing...'
-//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/ifexisting'), 0), findTestData('TestData').getValue(
-//        4, 39))
+'please fill up...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/applicantsdetails'), 0), findTestData('TestData').getValue(
+        4, 38))
+
+'existing cust...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/ifexisting'), 0), findTestData('TestData').getValue(
+        4, 39))
+
 'Number of Applicant'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 40)]), 0), findTestData(
         'TestData').getValue(4, 40))
@@ -410,12 +412,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 61)]), 0, FailureHandling.OPTIONAL)) {
     'Weve prefilled'
-    Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 61)]), 0), 
+    Mobile.verifyEqual(Mobile.getText(findTestObject('Apply/Existing Cust'), 0), 
         findTestData('TestData').getValue(5, 61))
 
     Mobile.takeScreenshot('Screenshot/Apply/Existing1.png')
 
-    Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
+    Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 62)]), 0)
+
+    Mobile.callTestCase(findTestCase('4. Confirmation'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 } else {
     'missing info'
     Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(6, 61)]), 0), 
@@ -423,10 +427,8 @@ if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData(
 
     Mobile.takeScreenshot('Screenshot/Apply/Existing2.png')
 
-    Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
-	
-	Mobile.callTestCase(findTestCase('3a. Step 1'), [:], FailureHandling.CONTINUE_ON_FAILURE)
-	
-}
+    Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 62)]), 0)
 
+    Mobile.callTestCase(findTestCase('3a. Step 1'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+}
 

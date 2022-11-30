@@ -56,7 +56,7 @@ Mobile.tap(findTestObject('Text', [('Verify') : 'Exit']), 0)
 Mobile.takeScreenshot('Screenshot/Consent/FirstScreen.png')
 
 'whats your cust preferred method...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 119)]), 0), 
+Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Preferred Method'), 0), 
     findTestData('TestData').getValue(4, 119))
 
 'Sign Electronically'
@@ -80,14 +80,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
     findTestData('TestData').getValue(4, 124))
 
 'Upload applicants mortgage'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 125)]), 0), 
+Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Consent3rd'), 0), 
     findTestData('TestData').getValue(4, 125))
 
 'Continue button'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Continue']), 0), 'Continue')
 
-'Do it Later'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Save as Draft']), 0), 'Do It Later')
+'Save as Draft'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Save as Draft']), 0), 'Save as Draft')
 
 if (Choice == '1') {
     'tap sign electronically'
