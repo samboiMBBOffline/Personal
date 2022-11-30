@@ -84,7 +84,17 @@ if (No5=='-') {
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 27)]), 0),
 	findTestData('TestData').getValue(4, 27))
 
-Sum=No1+No2+No3+No4+No5
+if (Mobile.verifyElementExist(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5,27)]),0)) {
+	
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5,27)]),0),findTestData('TestData').getValue(5,27))
+
+	int No6 = (Mobile.getText(findTestObject('FollowingText',[('Verify'):findTestData('TestData').getValue(5,27)]), 0)).replaceAll(' ','')
+	
+	Sum=No1+No2+No3+No4+No5+No6
+	
+	} else {
+		Sum=No1+No2+No3+No4+No5
+	}
 
 Mobile.verifyEqual(B,Sum)
 
@@ -105,52 +115,5 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Cases'])
 'Chat'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Chat']),1),'Chat')
 
-'Tap Notification'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):1]),0)
 
-'Notification title'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,30)]),0),findTestData('TestData').getValue(4,30))
-
-Mobile.takeScreenshot('Screenshot/Dashboard/Notification.png')
-
-'Tap Back Button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):1]),0)
-
-for (i=23;i<28;i++) {
-	
-	Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,i)]),0)
-	
-	'Verify navigate to Your Cases screen'
-	Mobile.verifyEqual(Mobile.getText(findTestObject('Input',[('Verify'):findTestData('TestData').getValue(4,31)]),0),findTestData('TestData').getValue(4,31))
-	
-	Mobile.takeScreenshot('Screenshot/Dashboard/YourCases.png')
-	
-	Mobile.tap(findTestObject('Text',[('Verify'):'Home']),2)
-}
-
-'Tap Hamburger Button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):2]),0)
-
-'Name in dashboard and name in hamburger is same'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Hi Name'),0).substring(3),Mobile.getText(findTestObject('Object Repository/User Name in Hamburger'),0)+',')
-
-'Mortgage'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,22)]),0),findTestData('TestData').getValue(4,22))
-
-Mobile.takeScreenshot('Screenshot/Dashboard/Hamburger.png')
-
-'ASB'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,32)]),0),findTestData('TestData').getValue(4,32))
-
-'Insurance'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,33)]),0),findTestData('TestData').getValue(4,33))
-
-'Wealth'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,34)]),0),findTestData('TestData').getValue(4,34))
-
-'Log Out'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,35)]),0),findTestData('TestData').getValue(4,35))
-
-'Tap X'
-Mobile.tap(findTestObject('Object Repository/X_Hamburger'),0)
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MobileElementEntity>
    <description></description>
-   <name>applicantsdetails</name>
+   <name>Preferred Method</name>
    <tag></tag>
-   <elementGuidId>9d2f1707-991b-445b-821c-18fd3066b885</elementGuidId>
+   <elementGuidId>00000000-0000-0000-0000-000000000000</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -12,23 +12,23 @@
       <name>class</name>
       <type>Main</type>
       <value>android.widget.TextView</value>
-      <webElementGuid>a0eca60d-9ba7-4362-9aa3-1901470bf2d7</webElementGuid>
+      <webElementGuid>01f736d6-26f7-49e9-b3d5-f5725ba3c7e4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>index</name>
       <type>Main</type>
-      <value>2</value>
-      <webElementGuid>859e9809-aaeb-4737-b3ad-d096d6c76248</webElementGuid>
+      <value>3</value>
+      <webElementGuid>598f9703-2fc6-4f99-a63e-21f9c299c8b1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>applicant's details to check if they're an</value>
-      <webElementGuid>02dfae68-eab2-4717-a138-fd9feba75690</webElementGuid>
+      <value>What's your applicant's preferred method to provide consent to the terms and conditions?</value>
+      <webElementGuid>9ede6b92-d378-46f9-8915-d446076263fc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -36,7 +36,7 @@
       <name>package</name>
       <type>Main</type>
       <value>com.maybanksfapp.sit</value>
-      <webElementGuid>a6dad2b6-2d55-4d68-aad1-8290c758715e</webElementGuid>
+      <webElementGuid>72d8ac2c-97ca-41e2-8070-3a4fdf37522a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -44,7 +44,7 @@
       <name>checkable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>ee45ac5b-5273-4016-838e-c02b899de0d4</webElementGuid>
+      <webElementGuid>24cf53fd-76f2-42ae-a257-1b3947c15f05</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -52,7 +52,7 @@
       <name>checked</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>9f46a718-519f-41a7-9cc6-5da6fe4b1498</webElementGuid>
+      <webElementGuid>af95f34f-536d-44cb-9905-8d20beff8bd7</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -60,7 +60,7 @@
       <name>clickable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>c8cb8dec-747d-49b7-9fa1-e1df9a5620e8</webElementGuid>
+      <webElementGuid>08ddc94e-39be-4d4b-8105-055dc40202dc</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -68,7 +68,7 @@
       <name>enabled</name>
       <type>Main</type>
       <value>true</value>
-      <webElementGuid>2b439abc-9530-4521-aed6-60821ecf432d</webElementGuid>
+      <webElementGuid>8cce2b32-bec0-4ef7-a7b4-589c1fcbba2e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -76,7 +76,7 @@
       <name>focusable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>07f090d8-ed7b-457d-a4d2-2a9a0de9ea63</webElementGuid>
+      <webElementGuid>0620f6d3-4ca5-4563-b5c5-6839d7637e08</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -84,7 +84,7 @@
       <name>focused</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>03962f1b-2889-4754-b4a9-cd95495f3ff4</webElementGuid>
+      <webElementGuid>368cfb0c-2e2f-4600-a283-a730827d493f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -92,7 +92,7 @@
       <name>scrollable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>6d94bd42-0864-4a9d-97d6-1604f485f846</webElementGuid>
+      <webElementGuid>69ef048f-f947-4928-89ab-afd81d27cf07</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -100,7 +100,7 @@
       <name>long-clickable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>485218ed-3963-4815-8fb7-39bc04492321</webElementGuid>
+      <webElementGuid>22df0924-2a3b-4f9a-a3d1-2bb43983a914</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -108,7 +108,7 @@
       <name>password</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>67f9421b-d95a-4ad4-b831-50486d7bc062</webElementGuid>
+      <webElementGuid>9e4f30e0-2886-4a45-b951-ea76c9a2e490</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -116,47 +116,47 @@
       <name>selected</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>7e1efa58-1dba-4f67-b6da-53afa34e9bb4</webElementGuid>
+      <webElementGuid>47911ca2-d172-4ea6-9fec-7adfad556899</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>x</name>
       <type>Main</type>
-      <value>269</value>
-      <webElementGuid>a3c00817-fe48-4abe-b51d-367615be9d6e</webElementGuid>
+      <value>54</value>
+      <webElementGuid>f97e4e3c-42fa-4f37-aa02-da918b78c994</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>y</name>
       <type>Main</type>
-      <value>424</value>
-      <webElementGuid>baed50d6-6c1a-4288-b920-5a05d1dd6d4e</webElementGuid>
+      <value>709</value>
+      <webElementGuid>95e3171b-e03e-4df0-97b4-f728db9386c7</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>width</name>
       <type>Main</type>
-      <value>716</value>
-      <webElementGuid>5468686b-65e2-4c2b-b59e-22b21f0b7baa</webElementGuid>
+      <value>972</value>
+      <webElementGuid>3b3b1653-1539-40ef-930c-d7c1cb317138</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>height</name>
       <type>Main</type>
-      <value>43</value>
-      <webElementGuid>1ea11bfa-a525-4aa7-a927-c2859ba53921</webElementGuid>
+      <value>56</value>
+      <webElementGuid>12806d17-b6d3-49a0-8149-4f527460ef05</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>bounds</name>
       <type>Main</type>
-      <value>[269,424][985,467]</value>
-      <webElementGuid>26165fa0-8870-4ca4-a7df-0b1767b0796e</webElementGuid>
+      <value>[54,709][1026,765]</value>
+      <webElementGuid>36a6073f-d4c3-4547-8dcd-462bc36f339d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -164,16 +164,16 @@
       <name>displayed</name>
       <type>Main</type>
       <value>true</value>
-      <webElementGuid>37f56863-23ae-4372-b00c-39073de8a4ff</webElementGuid>
+      <webElementGuid>1d883f66-ad50-46a9-905e-7c0bcc8be989</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.widget.TextView[2]</value>
-      <webElementGuid>a8de8eac-5f9f-4dca-8367-9befd7fe5dd8</webElementGuid>
+      <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.ScrollView[1]/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.widget.TextView[2]</value>
+      <webElementGuid>ec6102f9-51b3-4eff-af39-f75e3451ddbb</webElementGuid>
    </webElementProperties>
-   <locator>//*[@class = 'android.widget.TextView' and (@text = concat(&quot;applicant&quot; , &quot;'&quot; , &quot;s details to check if they&quot; , &quot;'&quot; , &quot;re an&quot;) or . = concat(&quot;applicant&quot; , &quot;'&quot; , &quot;s details to check if they&quot; , &quot;'&quot; , &quot;re an&quot;))]</locator>
+   <locator>//*[@class = 'android.widget.TextView' and (@text = concat(&quot;What&quot; , &quot;'&quot; , &quot;s your applicant&quot; , &quot;'&quot; , &quot;s preferred method to provide consent to the terms and conditions?&quot;) or . = concat(&quot;What&quot; , &quot;'&quot; , &quot;s your applicant&quot; , &quot;'&quot; , &quot;s preferred method to provide consent to the terms and conditions?&quot;))]</locator>
    <locatorStrategy>ATTRIBUTES</locatorStrategy>
 </MobileElementEntity>
