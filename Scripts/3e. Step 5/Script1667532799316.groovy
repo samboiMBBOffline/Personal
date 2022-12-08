@@ -30,7 +30,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.takeScreenshot('Sreenshot/Step4/First.png')
 
-Mobile.tap(findTestObject('Object Repository/BackButtonStep1'), 0)
+Mobile.tap(findTestObject('Object Repository/BackButtonStep5'), 0)
 
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 101)]), 0), findTestData(
 	'TestData').getValue(2, 101))
@@ -48,6 +48,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.tap(findTestObject('FollowingText', [('Verify') :  findTestData('TestData').getValue(4, 107)]), 0)
 
+for (i=1;i<9;i++) {
+	
+	Mobile.scrollToText(findTestData('Drop Down').getValue(11,i),FailureHandling.OPTIONAL)
+	
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('Drop Down').getValue(11,i)]),0),findTestData('Drop Down').getValue(11,i))
+}
+Mobile.takeScreenshot('Screenshot/Step5/PrimaryIncomeList.png')
+
 Mobile.scrollToText(findTestData('TestData').getValue(5,107),FailureHandling.STOP_ON_FAILURE)
 
 'Tap chosen one'
@@ -58,6 +66,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 	'TestData').getValue(4, 108))
 
 Mobile.tap(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 108)]), 0)
+
+for (i=1;i<9;i++) {
+	
+	Mobile.scrollToText(findTestData('Drop Down').getValue(12,i),FailureHandling.OPTIONAL)
+	
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('Drop Down').getValue(12,i)]),0),findTestData('Drop Down').getValue(12,i))
+}
+Mobile.takeScreenshot('Screenshot/Step5/PrimaryIncomeList.png')
 
 Mobile.scrollToText(findTestData('TestData').getValue(5,108),FailureHandling.STOP_ON_FAILURE)
 
@@ -81,6 +97,10 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.tap(findTestObject('Object Repository/Apply/Yes Button', [('No') : 2]), 0)
 
 Mobile.tap(findTestObject('Object Repository/Apply/No Button', [('No') : 2]), 0)
+
+Mobile.dragAndDrop(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 110)]),findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 109)]),10)
+
+
 
 'Does the applicant have any other pending...'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 111)]), 0), findTestData(

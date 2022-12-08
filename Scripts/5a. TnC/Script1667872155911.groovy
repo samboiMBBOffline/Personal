@@ -23,19 +23,19 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 Mobile.takeScreenshot('Screenshot/Consent/TnC.png')
 
 'Tap back button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):1]),0)
+Mobile.tap(findTestObject('Object Repository/BackButtonTnC'),0)
 
 'Sign Electronically'
-Mobile.verifyEqual(Mobile.getText(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,120)]),0),0),findTestData('TestData').getValue(4,120))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,120)]),0),findTestData('TestData').getValue(4,120))
 
-'tap sign electronically'
-Mobile.tap(findTestObject('Object Repository/Consent/Radio1'),0)
+//'tap sign electronically'
+//Mobile.tap(findTestObject('Object Repository/Consent/Radio1'),0)
 
 'tap continue'
 Mobile.tap(findTestObject('Text',[('Verify'):'Continue']),0)
 
 'Tap X button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):2]),0)
+Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):1]),0)
 
 'Save your progress'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,126)]),0),findTestData('TestData').getValue(4,126))
@@ -58,49 +58,69 @@ Mobile.takeScreenshot('Screenshot/Consent/FirstScreen.png')
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,131))
 
+Text1 = Mobile.getText(findTestObject('TextNo',[('No'):2]),0)
+
 '1st Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,131)]),0),findTestData('TestData').getValue(4,131))
+Mobile.verifyEqual(Text1,findTestData('TestData').getValue(4,131))
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,132))
 
+Text2 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text1]),0)
+
 '2nd Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,132)]),0),findTestData('TestData').getValue(4,132))
+Mobile.verifyEqual(Text2,findTestData('TestData').getValue(4,132))
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,133))
 
+Text3 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text2]),0)
+
 '3rd Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,133)]),0),findTestData('TestData').getValue(4,133))
+Mobile.verifyEqual(Text3,findTestData('TestData').getValue(4,133))
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,134))
 
+//Text4 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text3]),0)
+
+Text4 = Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,134)]),0)
+
 '4th Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,134)]),0),findTestData('TestData').getValue(4,134))
+Mobile.verifyEqual(Text4,findTestData('TestData').getValue(4,134))
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,135))
 
+Text5 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text4]),0)
+
 '5th Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,135)]),0),findTestData('TestData').getValue(4,135))
-
-Mobile.scrollToText(findTestData('TestData').getValue(4,136))
-
-'6th Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,136)]),0),findTestData('TestData').getValue(4,136))
+Mobile.verifyEqual(Text5,findTestData('TestData').getValue(4,135))
 
 Mobile.scrollToText(findTestData('TestData').getValue(5,135))
 
-'6th a Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5,135)]),0),findTestData('TestData').getValue(5,135))
+Text6 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text5]),0)
+
+'6th Tnc'
+Mobile.verifyEqual(Text6,findTestData('TestData').getValue(5,135))
+
+Mobile.scrollToText(findTestData('TestData').getValue(5,136))
+
+Text7 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text6]),0)
+
+'7th a Tnc'
+Mobile.verifyEqual(Text7,findTestData('TestData').getValue(5,136))
 
 
 Mobile.scrollToText(findTestData('TestData').getValue(4,139))
 
-'7th Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,137)]),0),findTestData('TestData').getValue(4,139))
+Text8 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):Text7]),0)
 
-Mobile.scrollToText(findTestData('TestData').getValue(5,138))
+'8th Tnc'
+Mobile.verifyEqual(Text8,findTestData('TestData').getValue(4,136))
 
-'6th b Tnc'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5,138)]),0),findTestData('TestData').getValue(5,138))
+Mobile.scrollToText(findTestData('TestData').getValue(4,139),FailureHandling.CONTINUE_ON_FAILURE)
+
+Text9 = Mobile.getText(findTestObject('Consent/NextTnc',[('Verify'):findTestData('TestData').getValue(4,138)]),0)
+
+'9th b Tnc'
+Mobile.verifyEqual(Text9,findTestData('TestData').getValue(4,139))
 
 
 
@@ -110,6 +130,14 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 
 'no i do not agree'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,138)]),0),findTestData('TestData').getValue(4,138))
+
+
+Mobile.scrollToText(findTestData('TestData').getValue(2,140),FailureHandling.OPTIONAL)
+
+Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(2,140)]),0)
+
+'still stay in same screen'
+Mobile.verifyEqual(Text9,findTestData('TestData').getValue(4,139))
 
 'tap i agree'
 Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,137)]),0)

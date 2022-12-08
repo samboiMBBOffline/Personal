@@ -3,25 +3,17 @@
    <description></description>
    <name>AnyText</name>
    <tag></tag>
-   <elementGuidId>33929d40-d07e-4f7d-8ef3-60eef5f9385a</elementGuidId>
+   <elementGuidId>df155fc2-6e78-4295-90f3-a84adc645024</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>class</name>
-      <type>Main</type>
-      <value>android.widget.TextView</value>
-      <webElementGuid>60ef7f07-5bf4-4f1e-b65e-a70476281a80</webElementGuid>
-   </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
       <value>${Verify}</value>
-      <webElementGuid>24b060c9-a7c4-4c17-9c68-ca91899bd1a0</webElementGuid>
+      <webElementGuid>d0c8f84c-8abb-4371-b268-ae8621a4895e</webElementGuid>
    </webElementProperties>
-   <locator>//*[(@class = 'android.widget.TextView' or . = 'android.widget.EditText')and (@text = '${Verify}' or . = '${Verify}')]</locator>
-   <locatorStrategy>XPATH</locatorStrategy>
+   <locator>//*[(@text = '${Verify}' or . = '${Verify}')]</locator>
+   <locatorStrategy>ATTRIBUTES</locatorStrategy>
 </MobileElementEntity>

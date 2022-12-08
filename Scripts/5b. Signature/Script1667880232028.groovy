@@ -31,7 +31,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,140)]),0)
 
 'Tap X button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):2]),0)
+Mobile.tap(findTestObject('Object Repository/Consent/X_buttonSnC'),0)
 
 'Save your progress'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,126)]),0),findTestData('TestData').getValue(4,126))
@@ -47,7 +47,9 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 
 Mobile.takeScreenshot('Screenshot/Consent/Exit.png')
 
-Mobile.tap(findTestObject('Text',[('Verify'):'Exit']),0)
+//Mobile.tap(findTestObject('Text',[('Verify'):'Exit']),0)
+
+Mobile.tap(findTestObject('TextNo',[('No'):3]),0)
 
 Mobile.takeScreenshot('Screenshot/Consent/FirstScreen2.png')
 
@@ -100,3 +102,5 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 	0), findTestData('TestData').getValue(4, 181))
 
 Mobile.takeScreenshot('Screenshot/Sign/2nd Screen.png')
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Continue']),0)

@@ -17,26 +17,132 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Mobile.startExistingApplication('com.maybanksfapp.sit', FailureHandling.CONTINUE_ON_FAILURE)
-
-if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Other action required']), 2, FailureHandling.CONTINUE_ON_FAILURE)) {
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Other action required']), 2, FailureHandling.OPTIONAL)) {
     Mobile.tap(findTestObject('Text', [('Verify') : 'Draft Application: ']), 0)
 
-    Mobile.tap(findTestObject('Text', [('Verify') : 'Pending Applicant’s Information']), 0)
+}
+	Mobile.scrollToText('Pending Applicant’s Information',FailureHandling.CONTINUE_ON_FAILURE)
 	
-	Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
-}else {
 	Mobile.tap(findTestObject('Text', [('Verify') : 'Pending Applicant’s Information']), 0)
 	
 	Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
+	
+	
+
+for (i=1;i<6;i++) {
+
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Step '+i+' of 5']),0),'Step '+i+' of 5')
+
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
+
+'Save Your Progress'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,126)]),0),findTestData('TestData').getValue(4,126))
+
+'You can choose to save your progress as a draft before leaving and pick up from where you left off at a later time.'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,127)]),0),findTestData('TestData').getValue(4,127))
+
+Mobile.takeScreenshot('Screenshot/Draft/Delete1.png')
+
+'Save Now'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,129)]),0),findTestData('TestData').getValue(4,129))
+
+Mobile.tap(findTestObject('Object Repository/Draft/XbuttonSaveyourProgress'),0)
+
+'verify go previous screen'
+Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Step '+i+' of 5']),0)
+
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
+
+Mobile.tap(findTestObject('Text',[('Verify'):'Exit']),0)
+
+'verify go previous screen'
+Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Step '+i+' of 5']),0)
+
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
+
+'tap save now'
+Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,129)]),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('Draft').getValue(4,12)]),0),findTestData('Draft').getValue(4,12))
+
+Mobile.takeScreenshot('Screenshot/Draft/SavedMessage1.png')
+
+if(i==5) {
+	break
 }
 
-Mobile.verifyEqual(findTestObject('Text',[('Verify'):'Step 1 of 5']),'Step 1 of 5')
+Mobile.verifyElementExist(findTestObject('Object Repository/Draft/draft applications available'),0)
+
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
+
+Mobile.scrollToText('Pending Applicant’s Information',FailureHandling.CONTINUE_ON_FAILURE)
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Pending Applicant’s Information']), 0)
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
+
+if (i==1) {
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+}else if(i==2) {
+	
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+}else if(i==3) {
+
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+		
+}else if(i==4) {
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+	Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
+
+
+}
+
+}
+Mobile.scrollToText(findTestData('Draft').getValue(4,6),FailureHandling.OPTIONAL)
+
+Mobile.tap(findTestObject('Text',[('Verify'):findTestData('Draft').getValue(4,6)]),0)
+
+'whats your applicants preferred...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,119)]),0),findTestData('TestData').getValue(4,119))
+
+Mobile.takeScreenshot('Screenshot/Draft/ConsentSaveExit.png')
+
+'Save Your Progress'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,126)]),0),findTestData('TestData').getValue(4,126))
+
+'You can choose to save your progress as a draft before leaving and pick up from where you left off at a later time.'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,127)]),0),findTestData('TestData').getValue(4,127))
+
+Mobile.takeScreenshot('Screenshot/Draft/Delete6.png')
+
+'Save Now'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,129)]),0),findTestData('TestData').getValue(4,129))
+
+Mobile.tap(findTestObject('Object Repository/Draft/XbuttonSaveyourProgress'),0)
+
+'whats your applicants preferred...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,119)]),0),findTestData('TestData').getValue(4,119))
 
 Mobile.tap(findTestObject('ButtonNo',[('No'):2]),0)
 
-Mobile.verifyEqual()
+Mobile.tap(findTestObject('Text',[('Verify'):'Exit']),0)
 
+'whats your applicants preferred...'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,119)]),0),findTestData('TestData').getValue(4,119))
 
+Mobile.tap(findTestObject('ButtonNo',[('No'):2]),0)
+
+'tap save now'
+Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,129)]),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('Draft').getValue(4,12)]),0),findTestData('Draft').getValue(4,12))
+
+Mobile.takeScreenshot('Screenshot/Draft/SavedMessage1.png')
 
 

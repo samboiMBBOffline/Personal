@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import java.util.ArrayList
+import com.my.keywords.android.scrollNew as scrollNew
 
 'Confirmation'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 112)]), 0), findTestData(
@@ -25,7 +26,8 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.takeScreenshot('Screenshot/Confirmation/Screen.png',FailureHandling.STOP_ON_FAILURE)
 
 
-Mobile.tap(findTestObject('Object Repository/BackButtonStep1'),0)
+
+Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
 
 'Step 5 of 5'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 106)]), 0), findTestData(
@@ -50,8 +52,24 @@ while (i<28) {
 }
 
 Mobile.tap(findTestObject('EditNo',[('No'):1]),0)
+X = Mobile.getDeviceWidth()/2
+Y1= Mobile.getDeviceHeight()*2/3
+Y2= Mobile.getDeviceHeight()*1/3
+
 for(i=0;i<28;i++) {
-Mobile.scrollToText(NameList[i],FailureHandling.CONTINUE_ON_FAILURE)
+
+	if (Mobile.verifyElementExist(findTestObject('AnyText',[('Verify'):NameList[i]]),3,FailureHandling.OPTIONAL)) {
+		
+		Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):NameList[i]]),0),NameList[i])}
+		else {
+		while(Mobile.verifyElementNotExist(findTestObject('AnyText',[('Verify'):NameList[i]]),3,FailureHandling.OPTIONAL)) {
+
+			Mobile.swipe(X,Y1,X,Y2)
+		}
+		Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):NameList[i]]),0),NameList[i])
+		}
+	
+	
 Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):NameList[i]]),0),NameList[i])
 }
 
@@ -92,7 +110,7 @@ C = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'City']),0)
 
 D = Mobile.getText(findTestObject('FollowingInput',[('Verify'):'Postcode']),0)
 
-Mobile.scrollToText(findTestData('TestData').getValue(4,81),FailureHandling.OPTIONAL)
+scrollNew.text(findTestData('TestData').getValue(4,81))
 
 E = Mobile.getText(findTestObject('FollowingText',[('Verify'):'State']),0)
 
@@ -126,7 +144,7 @@ Mobile.tap(findTestObject('Text',[('Verify'):'Edit']),0)
 
 for (i=0;i<7;i++) {
 	
-	Mobile.scrollToText(EmploymentDeets[i],FailureHandling.CONTINUE_ON_FAILURE)
+	scrollNew.text(EmploymentDeets[i])
 	
 	Mobile.verifyEqual(Mobile.getText(findTestObject('AnyText',[('Verify'):EmploymentDeets[i]]),0),EmploymentDeets[i])
 }
@@ -139,11 +157,9 @@ A3 = A1 + (' ' + A2)
 
 Mobile.verifyEqual(EmploymentDeets[7],A3)
 
-Mobile.scrollToText('Postcode',FailureHandling.OPTIONAL)
+scrollNew.text('Postcode')
 
 Mobile.takeScreenshot('Screenshot/Confirmation/OfficeAddy.png')
-
-Mobile.scrollToText('Save',FailureHandling.OPTIONAL)
 
 Mobile.tap(findTestObject('Text',[('Verify'):'Save']),0)
 

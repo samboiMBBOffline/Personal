@@ -22,16 +22,17 @@ Mobile.delay(3)
 Choice= '1'
 
 'Tap back button'
-Mobile.tap(findTestObject('BackButtonStep1'), 0)
-
+Mobile.tap(findTestObject('Object Repository/ButtonNo', [('No') : 1]), 0)
 'Back to previous screen'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Confirmation']), 0), 'Confirmation')
 
 'Go back to consent screen'
 Mobile.tap(findTestObject('Text', [('Verify') : 'Confirm & Continue']), 0)
 
+Mobile.delay(3)
+
 'Tap X button'
-Mobile.tap(findTestObject('Object Repository/ButtonNo', [('No') : 2]), 0)
+Mobile.tap(findTestObject('Object Repository/Consent/X_button'), 0)
 
 'Save your progress'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 126)]), 0), 
@@ -86,24 +87,26 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Cons
 'Continue button'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Continue']), 0), 'Continue')
 
+Mobile.scrollToText('Save as Draft',FailureHandling.CONTINUE_ON_FAILURE)
+
 'Save as Draft'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Save as Draft']), 0), 'Save as Draft')
 
 if (Choice == '1') {
     'tap sign electronically'
-    Mobile.tap(findTestObject('Object Repository/Consent/Radio1'), 0)
+    Mobile.tap(findTestObject('RadioNo',[('No'):1]), 0)
 
     'tap continue'
     Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
 } else if (Choice == '2') {
     'tap generate consent for,'
-    Mobile.tap(findTestObject('Object Repository/Consent/Radio2'), 0)
+    Mobile.tap(findTestObject('RadioNo',[('No'):1]), 0)
 
     'tap continue'
     Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
 } else if (Choice == '3') {
     'tap upload application form'
-    Mobile.tap(findTestObject('Object Repository/Consent/Radio3'), 0)
+    Mobile.tap(findTestObject('RadioNo',[('No'):1]), 0)
 
     'tap continue'
     Mobile.tap(findTestObject('Text', [('Verify') : 'Continue']), 0)
