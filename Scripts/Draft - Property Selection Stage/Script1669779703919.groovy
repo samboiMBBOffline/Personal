@@ -89,6 +89,8 @@ for(i=1;i<13;i++) {
 	
 		Input.add(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0))
 	
+		Mobile.verifyNotEqual(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0),'')	
+		
 		println(Input[i-1])
 	}
 Mobile.takeScreenshot('Screenshot/Draft/Eligibility4.png')
@@ -114,6 +116,8 @@ for(i=13;i<17;i++) {
 		
 			Input.add(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0))
 		
+			Mobile.verifyNotEqual(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0),'')
+			
 			println(Input[i-1])
 		}
 	
@@ -132,6 +136,8 @@ for(i=17;i<24;i++) {
 		
 			Input.add(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0))
 		
+			Mobile.verifyNotEqual(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0),'')
+			
 			println(Input[i-1])
 		}
 
@@ -150,6 +156,8 @@ for(i=24;i<28;i++) {
 		
 			Input.add(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0))
 		
+			Mobile.verifyNotEqual(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0),'')
+			
 			println(Input[i-1])
 		}
 
@@ -175,6 +183,8 @@ for(i=28;i<32;i++) {
 		
 			Input.add(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0))
 		
+			Mobile.verifyNotEqual(Mobile.getText(findTestObject('FollowingText',[('No'):i]),0),'')
+			
 			println(Input[i-1])
 		}
 

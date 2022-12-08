@@ -29,11 +29,11 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.takeScreenshot('Sreenshot/Step4/First.png')
 
-Mobile.tap(findTestObject('Object Repository/BackButtonStep1'), 0)
+Mobile.tap(findTestObject('Object Repository/BackButtonStep4'), 0)
 
 'Step 3 of 5'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(2, 83)]), 0), findTestData(
-		'TestData').getValue(2, 83))
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Office Contact Number']), 0), 
+'Office Contact Number')
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
@@ -49,6 +49,8 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 'RM'
 Mobile.verifyEqual(Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 102)]), 0), 'RM')
 
+Mobile.setText(findTestObject('InputNo', [('No') : 1]),'',0)
+
 '0.00'
 Mobile.verifyEqual(Mobile.getText(findTestObject('InputNo', [('No') : 1]), 0), '0.00')
 
@@ -62,6 +64,8 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 
 Mobile.takeScreenshot('Screenshot/Step4/NoDetails.png')
 
+
+
 Mobile.setText(findTestObject('InputNo', [('No') : 1]),'1234567890123',0)
 
 Mobile.verifyEqual((Mobile.getText(findTestObject('InputNo', [('No') : 1]),0)).length(),12)
@@ -69,12 +73,24 @@ Mobile.verifyEqual((Mobile.getText(findTestObject('InputNo', [('No') : 1]),0)).l
 'Set amount MGI'
 Mobile.setText(findTestObject('InputNo', [('No') : 1]),findTestData('TestData').getValue(5,102),0)
 	
+Mobile.verifyEqual(Mobile.getText(findTestObject('InputNo', [('No') : 1]),0),findTestData('TestData').getValue(5,105))
+
 'Existing Home Financing'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 103)]), 0), findTestData(
 	'TestData').getValue(4, 103))
 
 'tap amount of home financing'
-Mobile.tap(findTestObject('Text', [('Verify') :'Please Select']),0)
+Mobile.tap(findTestObject('FollowingText', [('Verify') :findTestData('TestData').getValue(4, 103)]),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'0']),0),'0')
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'1']),0),'1')
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'2']),0),'2')
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'More than 2']),0),'More than 2')
+
+Mobile.takeScreenshot('Screenshot/Step4/amountofhouse.png')
 
 Mobile.tap(findTestObject('Text', [('Verify') :findTestData('TestData').getValue(5,103)]),0)
 
@@ -86,7 +102,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 	'TestData').getValue(4, 104))
 
 'RM'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 104)]), 0), 'RM')
+Mobile.verifyEqual(Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 104)]), 0), 'RM')
 
 '0.00'
 Mobile.verifyEqual(Mobile.getText(findTestObject('InputNo', [('No') :2]), 0), '0.00')
@@ -99,6 +115,9 @@ Mobile.verifyEqual((Mobile.getText(findTestObject('InputNo', [('No') : 2]),0)).l
 
 'Set other commitments'
 Mobile.setText(findTestObject('InputNo', [('No') : 2]),findTestData('TestData').getValue(5,104),0)
+
+Mobile.verifyEqual(Mobile.getText(findTestObject('InputNo', [('No') : 2]),0),findTestData('TestData').getValue(5,106))
+
 
 Mobile.tap(findTestObject('Text',[('Verify'):'Save & Next']),0)
 
