@@ -68,21 +68,21 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 121)]), 0), 
     findTestData('TestData').getValue(4, 121))
 
-'Generate consent form'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 122)]), 0), 
-    findTestData('TestData').getValue(4, 122))
-
-'Automatically send the consent...'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 123)]), 0), 
-    findTestData('TestData').getValue(4, 123))
-
-'Upload Application Form'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 124)]), 0), 
-    findTestData('TestData').getValue(4, 124))
-
-'Upload applicants mortgage'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Consent3rd'), 0), 
-    findTestData('TestData').getValue(4, 125))
+//'Generate consent form'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 122)]), 0), 
+//    findTestData('TestData').getValue(4, 122))
+//
+//'Automatically send the consent...'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 123)]), 0), 
+//    findTestData('TestData').getValue(4, 123))
+//
+//'Upload Application Form'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 124)]), 0), 
+//    findTestData('TestData').getValue(4, 124))
+//
+//'Upload applicants mortgage'
+//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Consent/Consent3rd'), 0), 
+//    findTestData('TestData').getValue(4, 125))
 
 'Continue button'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Continue']), 0), 'Continue')

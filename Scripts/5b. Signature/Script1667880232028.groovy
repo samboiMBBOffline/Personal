@@ -31,7 +31,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 Mobile.tap(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,140)]),0)
 
 'Tap X button'
-Mobile.tap(findTestObject('Object Repository/Consent/X_buttonSnC'),0)
+Mobile.tap(findTestObject('Object Repository/ButtonNo',[('No'):2]),0)
 
 'Save your progress'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,126)]),0),findTestData('TestData').getValue(4,126))

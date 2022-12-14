@@ -154,9 +154,9 @@ if (Choice == '1 Applicant') {
         Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
 
         'fatcayes error msg'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 1)]), 
+        Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/FATCA error'), 
                 0), findTestData('Validation').getValue(3, 1))
-
+		
         Mobile.takeScreenshot('Screenshot/Validation/FATCAYes.png')
 
         'ntb cust'
@@ -173,16 +173,16 @@ if (Choice == '1 Applicant') {
 
         Mobile.takeScreenshot('Screenshot/Validation/NTBCust.png')
 
-        'staff MBB'
-        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 3), 0)
-
-        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
-
-        'staff MBB'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 3)]), 
-                0), findTestData('Validation').getValue(3, 3))
-
-        Mobile.takeScreenshot('Screenshot/Validation/staff MBB.png')
+//        'staff MBB'
+//        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 3), 0)
+//
+//        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
+//
+//        'staff MBB'
+//        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 3)]), 
+//                0), findTestData('Validation').getValue(3, 3))
+//
+//        Mobile.takeScreenshot('Screenshot/Validation/staff MBB.png')
 
         //	'Nationality not MY'
         //	Mobile.setText(findTestObject('InputNo',[('No'):1]),findTestData('Validation').getValue(1,4),0)
@@ -198,7 +198,7 @@ if (Choice == '1 Applicant') {
 
         Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
 
-        'staff MBB'
+        'WRONG AGE'
         Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 5)]), 
                 0), findTestData('Validation').getValue(3, 5))
 
@@ -209,7 +209,7 @@ if (Choice == '1 Applicant') {
 
 		Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
 
-		'staff MBB'
+		'WRONG AGE'
 		Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 5)]),
 				0), findTestData('Validation').getValue(3, 5))
 
@@ -221,48 +221,48 @@ if (Choice == '1 Applicant') {
 //
 //        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
 
-        'staff MBB'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 6)]), 
-                0), findTestData('Validation').getValue(3, 6))
+//        'staff MBB'
+//        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 6)]), 
+//                0), findTestData('Validation').getValue(3, 6))
+//
+//        Mobile.takeScreenshot('Screenshot/Validation/NotIndividual.png')
 
-        Mobile.takeScreenshot('Screenshot/Validation/NotIndividual.png')
-
-        'not onboarding status not ACT'
-        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 7), 0)
-
-        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
-
-        'not onboarding status not ACT'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 7)]), 
-                0), findTestData('Validation').getValue(3, 7))
-
-        Mobile.takeScreenshot('Screenshot/Validation/NotACT.png')
-
-        'not onboarding status not FULL'
-        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 8), 0)
-
-        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
-
-        'not onboarding status not FULL'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 8)]), 
-                0), findTestData('Validation').getValue(3, 8))
-
-        Mobile.takeScreenshot('Screenshot/Validation/NotFull.png')
-
-        'branch approval is not blank'
-        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 9), 0)
-
-        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
-
-        'branch approval is not blank'
-        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 9)]), 
-                0), findTestData('Validation').getValue(3, 9))
-
-        Mobile.takeScreenshot('Screenshot/Validation/BlankBranchApproval.png')
+//        'not onboarding status not ACT'
+//        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 7), 0)
+//
+//        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
+//
+//        'not onboarding status not ACT'
+//        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 7)]), 
+//                0), findTestData('Validation').getValue(3, 7))
+//
+//        Mobile.takeScreenshot('Screenshot/Validation/NotACT.png')
+//
+//        'not onboarding status not FULL'
+//        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 8), 0)
+//
+//        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
+//
+//        'not onboarding status not FULL'
+//        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 8)]), 
+//                0), findTestData('Validation').getValue(3, 8))
+//
+//        Mobile.takeScreenshot('Screenshot/Validation/NotFull.png')
+//
+//        'branch approval is not blank'
+//        Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('Validation').getValue(1, 9), 0)
+//
+//        Mobile.tap(findTestObject('Text', [('Verify') : 'Next']), 0)
+//
+//        'branch approval is not blank'
+//        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Validation').getValue(3, 9)]), 
+//                0), findTestData('Validation').getValue(3, 9))
+//
+//        Mobile.takeScreenshot('Screenshot/Validation/BlankBranchApproval.png')
     
     
     'set ID number in 5,54'
-    Mobile.setText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(4, 56)]), findTestData('TestData').getValue(
+    Mobile.setText(findTestObject('InputNo', [('No') : 1]), findTestData('TestData').getValue(
             5, 54), 0)
 
 	NRIC = Mobile.getText(findTestObject('Object Repository/InputNo', [('No') : 1]),0)
@@ -446,7 +446,7 @@ if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData(
 	
     Mobile.tap(findTestObject('TextNo', [('No') : 3]), 0)
 
-    Mobile.callTestCase(findTestCase('4. Confirmation'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+//    Mobile.callTestCase(findTestCase('4. Confirmation'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 } else {
     'missing info'
     Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(6, 61)]), 0), 
@@ -454,7 +454,7 @@ if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : findTestData(
 
     Mobile.takeScreenshot('Screenshot/Apply/Existing2.png')
 
-	Mobile.verifyEqual(Mobile.getText(findTestObject('Apply/Existing Cust'), 0), findTestData('TestData').getValue(5, 62))
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5, 62)]), 0), findTestData('TestData').getValue(5, 62))
 	
     Mobile.tap(findTestObject('TextNo', [('No') : 3]), 0)
 

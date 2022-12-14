@@ -17,10 +17,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import java.util.ArrayList as ArrayList
+import com.my.keywords.android.scrollNew as scrollNew
 
 Mobile.startExistingApplication(GlobalVariable.startAPP, FailureHandling.OPTIONAL)
 
-if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Login to Sales Force']), 10, FailureHandling.OPTIONAL)) {
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Login to Sales Force']), 7, FailureHandling.OPTIONAL)) {
     Mobile.callTestCase(findTestCase('1. Login Details'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 }
 
@@ -57,9 +58,24 @@ not_run: Mobile.callTestCase(findTestCase('5a. TnC'), [:], FailureHandling.CONTI
 'Executed'
 not_run: Mobile.callTestCase(findTestCase('5b. Signature'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
-not_run: Mobile.callTestCase(findTestCase('6. Search Property'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('Draft - UCO Stage'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
-Mobile.callTestCase(findTestCase('Draft - UCO Stage'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('Draft - Consent Stage'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('Draft - Property Selection Stage'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('Draft - Submit Results Stage'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+'Executed'
 not_run: Mobile.callTestCase(findTestCase('Draft - Save and Exit all Screen'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('Draft - Delete Application'), [:], FailureHandling.CONTINUE_ON_FAILURE)
+
+'Executed'
+not_run: Mobile.callTestCase(findTestCase('6. Search Property'), [:], FailureHandling.CONTINUE_ON_FAILURE)
 

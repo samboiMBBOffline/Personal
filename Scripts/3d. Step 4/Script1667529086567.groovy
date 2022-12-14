@@ -82,15 +82,21 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 'tap amount of home financing'
 Mobile.tap(findTestObject('FollowingText', [('Verify') :findTestData('TestData').getValue(4, 103)]),0)
 
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'0']),0),'0')
+for (i=0;i<11;i++) {
+	String A = i
+	Mobile.scrollToText(A,FailureHandling.OPTIONAL)
+	Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):A]),0),A)
+}
 
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'1']),0),'1')
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'2']),0),'2')
-
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'More than 2']),0),'More than 2')
 
 Mobile.takeScreenshot('Screenshot/Step4/amountofhouse.png')
+
+Mobile.pressBack()
+
+'tap amount of home financing'
+Mobile.tap(findTestObject('FollowingText', [('Verify') :findTestData('TestData').getValue(4, 103)]),0)
+
+Mobile.scrollToText('0',FailureHandling.OPTIONAL)
 
 Mobile.tap(findTestObject('Text', [('Verify') :findTestData('TestData').getValue(5,103)]),0)
 
