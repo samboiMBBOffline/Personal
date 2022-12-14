@@ -6,6 +6,19 @@ import com.detroitlabs.katalonmobileutil.touch.Scroll as Scroll
 import com.detroitlabs.katalonmobileutil.touch.Scroll.ScrollFactor as ScrollFactor
 import com.detroitlabs.katalonmobileutil.touch.Swipe as Swipe
 import com.detroitlabs.katalonmobileutil.touch.Swipe.SwipeDirection as SwipeDirection
+import com.my.keywords.android.scrollNew as scrollNew
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import internal.GlobalVariable as GlobalVariable
 
 //Mobile.startExistingApplication('com.maybanksfapp.sit', FailureHandling.STOP_ON_FAILURE)
 'Customer  Onboarding'
@@ -41,52 +54,50 @@ if (Occupation == 'Please Select') {
     Occupation = findTestData('TestData').getValue(5, 84)
 }
 
-//Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
-//
-//Mobile.scrollToText('Retiree',FailureHandling.CONTINUE_ON_FAILURE)
-//
-//Mobile.tap(findTestObject('Text', [('Verify') : 'Retiree']), 0)
-//
-//Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
-//
-//Mobile.takeScreenshot('Screenshot/Step3/USeries1.png')
-//
-//Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
-//
-//Mobile.scrollToText('Other Outside Labour Force',FailureHandling.CONTINUE_ON_FAILURE)
+Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
 
-//
-//Mobile.tap(findTestObject('Text', [('Verify') : 'Other Outside Labour Force']), 0)
-//
-//Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
-//
-//Mobile.takeScreenshot('Screenshot/Step3/USeries2.png')
-//
-//Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
-//
-//Mobile.scrollToText('Housewife/Househusband', FailureHandling.CONTINUE_ON_FAILURE)
-//
-//Mobile.scrollToText('Housewife/Househusband',FailureHandling.CONTINUE_ON_FAILURE)
-//
-//Mobile.tap(findTestObject('Text', [('Verify') : 'Housewife/Househusband']), 0)
-//
-//Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
-//
-//Mobile.takeScreenshot('Screenshot/Step3/USeries3.png')
-//
-//Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
-//
-//Mobile.scrollToText('Student', FailureHandling.CONTINUE_ON_FAILURE)
-//
-//Mobile.tap(findTestObject('Text', [('Verify') : 'Student']), 0)
-//
-//Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
-//
-//Mobile.takeScreenshot('Screenshot/Step3/USeries4.png')
-//
-//Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
-//
-//Mobile.tap(findTestObject('Text', [('Verify') : 'Accountants']), 0)
+scrollNew.textDownSmall('Retiree')
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Retiree']), 0)
+
+Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
+
+Mobile.takeScreenshot('Screenshot/Step3/USeries1.png')
+
+Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
+
+scrollNew.textDownSmall('Other Outside Labour Force')
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Other Outside Labour Force']), 0)
+
+Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
+
+Mobile.takeScreenshot('Screenshot/Step3/USeries2.png')
+
+Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
+
+scrollNew.textDownSmall('Housewife/Househusband')
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Housewife/Househusband']), 0)
+
+Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
+
+Mobile.takeScreenshot('Screenshot/Step3/USeries3.png')
+
+Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
+
+scrollNew.textDownSmall('Student')
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Student']), 0)
+
+Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Occupation Sector']), 2)
+
+Mobile.takeScreenshot('Screenshot/Step3/USeries4.png')
+
+Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 84)]), 0)
+
+Mobile.tap(findTestObject('Text', [('Verify') : 'Accountants']), 0)
+
 'Occupation Sector'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 85)]), 0), findTestData(
         'TestData').getValue(4, 85))
@@ -388,9 +399,6 @@ Mobile.verifyEqual(40, CityLimit.length())
 Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') : findTestData('TestData').getValue(4, 78)]), 
     City, 0)
 
-Mobile.dragAndDrop(findTestObject('Text', [('Verify') : 'Postcode']), findTestObject('Text', [('Verify') : 'Office Address']), 
-    10)
-
 'Postcode'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 79)]), 0), findTestData(
         'TestData').getValue(4, 79))
@@ -466,7 +474,7 @@ Mobile.setText(findTestObject('FollowingInput1', [('Verify') : 'Office Contact N
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
-if (Mobile.verifyElementExist(findTestObject('Verify', [('Text') : 'Step 4 of 5']), 0, FailureHandling.CONTINUE_ON_FAILURE)) {
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 4 of 5']), 0, FailureHandling.OPTIONAL)) {
     Mobile.pressBack()
 }
 

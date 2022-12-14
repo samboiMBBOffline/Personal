@@ -28,13 +28,13 @@ if (Mobile.verifyElementExist(findTestObject('TotalCases'),0,FailureHandling.OPT
 i=1
 Mobile.tap(findTestObject('Apply/Pending Applicant Info',[('No'):i]),0)
 
-if (Mobile.verifyElementNotExist(findTestObject('Text',[('Verify'):'View Application Details']),2)) {
+if (Mobile.verifyElementNotExist(findTestObject('Text',[('Verify'):'View Application Details']),2,FailureHandling.OPTIONAL)) {
 	
-	while(Mobile.verifyElementNotExist(findTestObject('Text',[('Verify'):'View Application Details']),2)) {
+	while(Mobile.verifyElementNotExist(findTestObject('Text',[('Verify'):'View Application Details']),5)) {
 		
 		i++
 		
-		Mobile.tap(findTestObject('ButtonNo',[('No'):1]),0)
+		Mobile.pressBack()
 		
 		Mobile.tap(findTestObject('Apply/Pending Applicant Info',[('No'):i]),0)
 	}
@@ -55,7 +55,7 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData
 Mobile.takeScreenshot('Screenshot/Draft/Delete2.png')
 
 'Lands on first screen'
-Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Quick Actions']),0), 'Quick Actions')
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):'Pending KYC']),0), 'Pending KYC')
 
 
 

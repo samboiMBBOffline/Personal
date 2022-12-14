@@ -17,3 +17,14 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+'29114-No property found'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,156)]),0),findTestData('TestData').getValue(4,156))
+
+'29114-try searching a different keyword.'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,157)]),0),findTestData('TestData').getValue(4,157))
+
+'29114-could the property be a subsale..'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(4,158)]),0),findTestData('TestData').getValue(4,158))
+
+'29114-instead?'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text',[('Verify'):findTestData('TestData').getValue(5,158)]),0),findTestData('TestData').getValue(5,158))

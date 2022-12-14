@@ -18,8 +18,6 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.my.keywords.android.scrollNew as scrollNew
 
-not_run: Mobile.startExistingApplication('com.maybanksfapp.sit', FailureHandling.CONTINUE_ON_FAILURE)
-
 Verify = findTestData('TestData').getValue(2, 2)
 
 'Customer  Onboarding'
@@ -56,6 +54,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : 
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
+'Business Type'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 73)]), 0), findTestData(
+        'TestData').getValue(4, 73))
+
+Mobile.scrollToText('Name',FailureHandling.OPTIONAL)
+
 Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Please remove invalid special characters.']), 3)
 
 Mobile.takeScreenshot('Screenshot/Step1/Validation1.png')
@@ -64,6 +68,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : 
     'MA', 0)
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
+'Business Type'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 73)]), 0), findTestData(
+		'TestData').getValue(4, 73))
+
+Mobile.scrollToText('Name',FailureHandling.OPTIONAL)
 
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Name must contain at least 3 alphabetical characters and space(s) only.']), 
         0), 'Name must contain at least 3 alphabetical characters and space(s) only.')
@@ -74,6 +84,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput', [('Verify') : 
     '   ', 0)
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
+'Business Type'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 73)]), 0), findTestData(
+		'TestData').getValue(4, 73))
+
+Mobile.scrollToText('Name',FailureHandling.OPTIONAL)
 
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Name must not contain leading/double spaces.']), 
         0), 'Name must not contain leading/double spaces.')
@@ -115,12 +131,11 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 Mobile.verifyEqual(Mobile.getText(findTestObject('Input', [('Verify') : findTestData('TestData').getValue(5, 56)]), 0), 
     findTestData('TestData').getValue(5, 56))
 
-//'get IC'
-//Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
-//                    4, 55)]), 0), NRIC1)
-
-//NRIC1 = 
-//Mobile.takeScreenshot('Screenshot/Step1/Validation4.png')
+'get IC'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/FollowingInput', [('Verify') : findTestData('TestData').getValue(
+                    4, 55)]), 0), NRIC1)
+NRIC1 = 
+Mobile.takeScreenshot('Screenshot/Step1/Validation4.png')
 'Religion'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 64)]), 0), findTestData(
         'TestData').getValue(4, 64))
@@ -160,8 +175,7 @@ Mobile.takeScreenshot('Screenshot/Dropdown/Step1b')
 
 Mobile.pressBack()
 
-Mobile.dragAndDrop(findTestObject('Text',[('Verify'):'Salutation']),
-	findTestObject('Text',[('Verify'):'Name']),10)
+Mobile.dragAndDrop(findTestObject('Text', [('Verify') : 'Salutation']), findTestObject('Text', [('Verify') : 'Name']), 10)
 
 'Salutation'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 65)]), 0), findTestData(
@@ -175,10 +189,7 @@ if (Salutation == 'Please Select') {
     'Tap Please Select'
     Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 65)]), 
         0)
-
-    'scroll to the choosen salutation'
-    Mobile.scrollToText(findTestData('TestData').getValue(5, 65), FailureHandling.CONTINUE_ON_FAILURE)
-
+	
     Salutation = findTestData('TestData').getValue(5, 65)
 
     'tap choosen salutation'
@@ -192,18 +203,27 @@ if (Salutation == 'Please Select') {
 Mobile.tap(findTestObject('Text', [('Verify') : Salutation]), 0)
 
 for (i = 1; i < 25; i++) {
-    Mobile.scrollToText(findTestData('Drop down').getValue(2, i), FailureHandling.OPTIONAL)
-
-	if (i == 6) {
-		Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato'),0),findTestData('Drop down').getValue(2, i))
-	}else if(i==7) {
-		Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato1'),0),findTestData('Drop down').getValue(2, i))
-	}else if(i==8) {
-		Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato2'),0),findTestData('Drop down').getValue(2, i))
-	}else {
+    scrollNew.textDownSmall(findTestData('Drop down').getValue(2, i))
 	
-    Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(2, i)]), 0), 
-        findTestData('Drop down').getValue(2, i))}
+//	scrollNew.textDown(findTestData('Drop down').getValue(2, i))
+//	if(i==4||i==7||i==10||i==13||i==21) {
+//		Mobile.dragAndDrop(findTestObject('TextNo',[('No'):4]),findTestObject('TextNo',[('No'):1]),10)
+	
+	
+	
+    if (i == 6) {
+        Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato'), 0), findTestData('Drop down').getValue(
+                2, i))
+    } else if (i == 7) {
+        Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato1'), 0), findTestData('Drop down').getValue(
+                2, i))
+    } else if (i == 8) {
+        Mobile.verifyEqual(Mobile.getText(findTestObject('Object Repository/Apply/dato2'), 0), findTestData('Drop down').getValue(
+                2, i))
+    } else {
+        Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(2, i)]), 
+                0), findTestData('Drop down').getValue(2, i))
+    }
 }
 
 Mobile.takeScreenshot('Screenshot/Dropdown/Step1b.png')
@@ -214,8 +234,6 @@ Mobile.pressBack()
 
 //Mobile.dragAndDrop(findTestObject('Text', [('Verify') : 'Salutation']), findTestObject('Text', [('Verify') : 'ID Number']), 
 //    10)
-
-
 Mobile.takeScreenshot('Screenshot/Step1/Second.png')
 
 'Gender'
@@ -338,8 +356,8 @@ Mobile.takeScreenshot('Screenshot/Dropdown/Step1e.png')
 
 Mobile.pressBack()
 
-Mobile.dragAndDrop(findTestObject('Text',[('Verify'):'Education']),
-	findTestObject('Text',[('Verify'):'Salutation']),10)
+Mobile.dragAndDrop(findTestObject('Text', [('Verify') : 'Education']), findTestObject('Text', [('Verify') : 'Salutation']), 
+    10)
 
 'Country Code'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 69)]), 0), findTestData(
@@ -382,8 +400,6 @@ Mobile.takeScreenshot('Screenshot/Dropdown/Step1f.png')
 
 Mobile.pressBack()
 
-
-
 'Phone Number'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 70)]), 0), findTestData(
         'TestData').getValue(4, 70))
@@ -405,8 +421,6 @@ Mobile.verifyEqual(10, CheckLengthPhone.length())
 
 Mobile.setText(findTestObject('Object Repository/InputNo', [('No') : 1]), '142255681', 0)
 
-
-
 'Resident Status'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 71)]), 0), findTestData(
         'TestData').getValue(4, 71))
@@ -423,8 +437,8 @@ if (Resident == 'Please Select') {
     'scroll to the choosen Resident Status'
     Mobile.scrollToText(findTestData('TestData').getValue(5, 71), FailureHandling.CONTINUE_ON_FAILURE)
 
-	Resident = findTestData('TestData').getValue(5, 71)
-	
+    Resident = findTestData('TestData').getValue(5, 71)
+
     'tap choosen Resident Status'
     Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 71)]), 0)
 
@@ -440,18 +454,15 @@ if (Resident == 'Please Select') {
 Mobile.tap(findTestObject('Text', [('Verify') : Resident]), 0)
 
 for (i = 1; i < 9; i++) {
-	Mobile.scrollToText(findTestData('Drop down').getValue(7, i), FailureHandling.OPTIONAL)
+    Mobile.scrollToText(findTestData('Drop down').getValue(7, i), FailureHandling.OPTIONAL)
 
-	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(7, i)]), 0),
-		findTestData('Drop down').getValue(7, i))
+    Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(7, i)]), 0), 
+        findTestData('Drop down').getValue(7, i))
 }
 
 Mobile.takeScreenshot('Screenshot/Dropdown/Step1g.png')
 
 Mobile.pressBack()
-
-
-
 
 'Employment Status'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 72)]), 0), findTestData(
@@ -469,8 +480,8 @@ if (Employment == 'Please Select') {
     'scroll to the choosen Employment Status'
     Mobile.scrollToText(findTestData('TestData').getValue(5, 72), FailureHandling.CONTINUE_ON_FAILURE)
 
-	Employment = findTestData('TestData').getValue(5, 72)
-	
+    Employment = findTestData('TestData').getValue(5, 72)
+
     'tap choosen Employment Status'
     Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 72)]), 0)
 
@@ -482,18 +493,15 @@ if (Employment == 'Please Select') {
 Mobile.tap(findTestObject('Text', [('Verify') : Employment]), 0)
 
 for (i = 1; i < 9; i++) {
-	Mobile.scrollToText(findTestData('Drop down').getValue(8, i), FailureHandling.OPTIONAL)
+    Mobile.scrollToText(findTestData('Drop down').getValue(8, i), FailureHandling.OPTIONAL)
 
-	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(8, i)]), 0),
-		findTestData('Drop down').getValue(8, i))
+    Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(8, i)]), 0), 
+        findTestData('Drop down').getValue(8, i))
 }
 
 Mobile.takeScreenshot('Screenshot/Dropdown/Step1h.png')
 
 Mobile.pressBack()
-
-
-
 
 'Business Type'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 73)]), 0), findTestData(
@@ -511,9 +519,8 @@ if (Business == 'Please Select') {
     'scroll to the choosen Business Type'
     Mobile.scrollToText(findTestData('TestData').getValue(5, 73), FailureHandling.CONTINUE_ON_FAILURE)
 
-	
-	Business = findTestData('TestData').getValue(5, 73)
-	
+    Business = findTestData('TestData').getValue(5, 73)
+
     'tap choosen Business Type'
     Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(5, 73)]), 0)
 
@@ -522,25 +529,18 @@ if (Business == 'Please Select') {
                         4, 73)]), 0), findTestData('TestData').getValue(5, 73))
 }
 
-
-
-
 Mobile.tap(findTestObject('Text', [('Verify') : Business]), 0)
 
 for (i = 1; i < 7; i++) {
-	Mobile.scrollToText(findTestData('Drop down').getValue(9, i), FailureHandling.OPTIONAL)
+    Mobile.scrollToText(findTestData('Drop down').getValue(9, i), FailureHandling.OPTIONAL)
 
-	Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(9, i)]), 0),
-		findTestData('Drop down').getValue(9, i))
+    Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('Drop down').getValue(9, i)]), 0), 
+        findTestData('Drop down').getValue(9, i))
 }
 
 Mobile.takeScreenshot('Screenshot/Dropdown/Step1i.png')
 
 Mobile.pressBack()
-
-
-
-
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 

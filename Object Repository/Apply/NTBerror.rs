@@ -3,7 +3,7 @@
    <description></description>
    <name>NTBerror</name>
    <tag></tag>
-   <elementGuidId>5dd54a56-2994-4cec-87b8-7a8e21c56600</elementGuidId>
+   <elementGuidId>d4eb71c3-a846-44b1-b286-b77228448566</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
@@ -12,7 +12,7 @@
       <name>class</name>
       <type>Main</type>
       <value>android.widget.TextView</value>
-      <webElementGuid>2ff875bf-15d8-4bbf-9d62-49910c2014b9</webElementGuid>
+      <webElementGuid>63b1b345-ed36-402e-be4b-5574a0039929</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -20,15 +20,15 @@
       <name>index</name>
       <type>Main</type>
       <value>0</value>
-      <webElementGuid>ba9a4eaf-9e07-4d4c-b9b1-57fd9121c9b4</webElementGuid>
+      <webElementGuid>0201a76f-ee91-425f-a8eb-3aeed856ad12</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>We're unable to process NTB customers currently. Kindly create a new application in WoLOC</value>
-      <webElementGuid>93825359-5386-44a3-a68c-30d5d25b3829</webElementGuid>
+      <value>We're unable to process NTB customers currently. Kindly create a new application in WoLOC.</value>
+      <webElementGuid>ea1a2eee-ceb1-465a-aefa-b2e9e54c6204</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -36,7 +36,7 @@
       <name>package</name>
       <type>Main</type>
       <value>com.maybanksfapp.sit</value>
-      <webElementGuid>a8248a23-090b-4638-b050-b9def192d945</webElementGuid>
+      <webElementGuid>a7731d2b-a349-4b4c-81ed-8c357fc36940</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -44,7 +44,7 @@
       <name>checkable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>592fca37-dd48-43ab-ab76-84e6ca889e39</webElementGuid>
+      <webElementGuid>1a5f4018-6cfc-4550-be1a-41cb9d00bf48</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -52,7 +52,7 @@
       <name>checked</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>3d7854df-ca3a-4909-8010-7902f942e8e6</webElementGuid>
+      <webElementGuid>58b7868c-6d4c-4851-84e6-c187168f0850</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -60,7 +60,7 @@
       <name>clickable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>9236613c-b0ae-454e-bf9c-489eea095cac</webElementGuid>
+      <webElementGuid>3be594c1-0510-4d3f-b4f1-fc0790408f8c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -68,7 +68,7 @@
       <name>enabled</name>
       <type>Main</type>
       <value>true</value>
-      <webElementGuid>e41a51c9-a8ce-408c-8182-37260de79ec7</webElementGuid>
+      <webElementGuid>165e6a59-a6c6-41d0-9a41-8312e5bd25a1</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -76,7 +76,7 @@
       <name>focusable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>df7bc52d-b2b1-48a0-9841-dc183686b150</webElementGuid>
+      <webElementGuid>1ee2df92-b53b-4b12-b19e-42f4919e88ed</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -84,7 +84,7 @@
       <name>focused</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>927d65c4-95e1-4d52-93a1-61b2e25c597f</webElementGuid>
+      <webElementGuid>95f11796-359e-4ee4-9ffc-6723c152a2b5</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -92,7 +92,7 @@
       <name>scrollable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>820a29a8-20cf-4835-936d-63551c0b51ab</webElementGuid>
+      <webElementGuid>0f8c1ef3-6714-4ed4-87af-fbe949117a10</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -100,7 +100,7 @@
       <name>long-clickable</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>d41765d5-21e7-411a-9ee8-cebe6d66965c</webElementGuid>
+      <webElementGuid>7f46e3ec-e38e-4baa-b3b2-a80ebbb886a5</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -108,7 +108,7 @@
       <name>password</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>0dc2443b-5abe-466c-b913-08260222b878</webElementGuid>
+      <webElementGuid>5932519c-1105-4744-b1b1-9df9678d4eb8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -116,7 +116,7 @@
       <name>selected</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>bdb097c7-958b-47dc-8698-3f15edf737d3</webElementGuid>
+      <webElementGuid>b8a8bb26-b8ad-477b-864e-848a7dc02476</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -124,7 +124,7 @@
       <name>x</name>
       <type>Main</type>
       <value>30</value>
-      <webElementGuid>1397f9bf-0196-49bf-a45e-7aec656dcdb7</webElementGuid>
+      <webElementGuid>9d0361a2-70bb-4fac-8406-146575cb68a7</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -132,7 +132,7 @@
       <name>y</name>
       <type>Main</type>
       <value>2070</value>
-      <webElementGuid>4e96248d-3642-47de-8fce-a2e038caa555</webElementGuid>
+      <webElementGuid>909d746a-ff34-4139-911c-0a7e40d4f4fa</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -140,7 +140,7 @@
       <name>width</name>
       <type>Main</type>
       <value>957</value>
-      <webElementGuid>b0c4ba2c-8536-4e5f-9874-f09b4a3e9681</webElementGuid>
+      <webElementGuid>2b5dcca0-2b29-4694-bd6d-55fe44cb35ac</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -148,7 +148,7 @@
       <name>height</name>
       <type>Main</type>
       <value>58</value>
-      <webElementGuid>31989af7-57d6-4f0b-910a-ca8702ddba38</webElementGuid>
+      <webElementGuid>f04db6d2-6ad3-4f41-bc57-34b4f37a5778</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -156,7 +156,7 @@
       <name>bounds</name>
       <type>Main</type>
       <value>[30,2070][987,2128]</value>
-      <webElementGuid>4dfb1dbf-9e92-49eb-ad0e-ab1547033232</webElementGuid>
+      <webElementGuid>2ea3d65c-b9ef-4ad4-ba66-f314f3129bde</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -164,7 +164,7 @@
       <name>displayed</name>
       <type>Main</type>
       <value>true</value>
-      <webElementGuid>f49e0a19-fbec-47e3-a88c-b2ce1cba2b76</webElementGuid>
+      <webElementGuid>b6cb2411-478d-4a6f-a937-e85a0e3d2c13</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -172,8 +172,8 @@
       <name>xpath</name>
       <type>Main</type>
       <value>//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.ViewGroup[2]/android.widget.TextView[1]</value>
-      <webElementGuid>a3bf4d24-78d7-4ef4-8343-2947fbe8342f</webElementGuid>
+      <webElementGuid>329c262c-73e5-443d-a0d9-77c29779b747</webElementGuid>
    </webElementProperties>
-   <locator>//*[@class = 'android.widget.TextView' and (@text = concat(&quot;We&quot; , &quot;'&quot; , &quot;re unable to process NTB customers currently. Kindly create a new application in WoLOC&quot;) or . = concat(&quot;We&quot; , &quot;'&quot; , &quot;re unable to process NTB customers currently. Kindly create a new application in WoLOC&quot;))]</locator>
+   <locator>//*[@class = 'android.widget.TextView' and (@text = concat(&quot;We&quot; , &quot;'&quot; , &quot;re unable to process NTB customers currently. Kindly create a new application in WoLOC.&quot;) or . = concat(&quot;We&quot; , &quot;'&quot; , &quot;re unable to process NTB customers currently. Kindly create a new application in WoLOC.&quot;))]</locator>
    <locatorStrategy>ATTRIBUTES</locatorStrategy>
 </MobileElementEntity>

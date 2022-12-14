@@ -53,7 +53,7 @@ if (((Country == 'Please Select') || (Country == null)) || (Country == '')) {
     Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 75)]), 
         0)
 
-    scrollNew.text(findTestData('TestData').getValue(5, 75))
+    scrollNew.textDownSmall(findTestData('TestData').getValue(5, 75))
 
     'tap object'
     Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 75)]), 0)
@@ -71,6 +71,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') :
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
+'Mailing Address'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 80)]), 0), findTestData(
+        'TestData').getValue(4, 80))
+
+Mobile.scrollToText(findTestData('TestData').getValue(4, 76), FailureHandling.CONTINUE_ON_FAILURE)
+
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Address Line 1 must be more than 5 characters.']), 
         0), 'Address Line 1 must be more than 5 characters.')
 
@@ -78,6 +84,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') :
     ' Leading Space', 0)
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
+'Mailing Address'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 80)]), 0), findTestData(
+        'TestData').getValue(4, 80))
+
+Mobile.scrollToText(findTestData('TestData').getValue(4, 76), FailureHandling.CONTINUE_ON_FAILURE)
 
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Address Line 1 must not contain leading/double spaces.']), 
         0), 'Address Line 1 must not contain leading/double spaces.')
@@ -87,6 +99,16 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') :
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
+'Mailing Address'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 80)]), 0), findTestData(
+        'TestData').getValue(4, 80))
+
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 3 of 5']), 4, FailureHandling.OPTIONAL)) {
+    Mobile.tap(findTestObject('Object Repository/BackButtonStep3'), 0)
+}
+
+Mobile.scrollToText(findTestData('TestData').getValue(4, 76), FailureHandling.CONTINUE_ON_FAILURE)
+
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : 'Please remove invalid special characters.']), 0), 
     'Please remove invalid special characters.')
 
@@ -95,10 +117,20 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') :
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 3 of 5']), 4, FailureHandling.OPTIONAL)) {
+    Mobile.tap(findTestObject('Object Repository/BackButtonStep3'), 0)
+}
+
+'Mailing Address'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 80)]), 0), findTestData(
+        'TestData').getValue(4, 80))
+
+Mobile.scrollToText(findTestData('TestData').getValue(4, 76), FailureHandling.CONTINUE_ON_FAILURE)
+
 Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Please remove invalid special characters.']), 4)
 
-if(Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Step 3 of 5']),4,FailureHandling.OPTIONAL)) {
-	Mobile.tap(findTestObject('Object Repository/BackButtonStep3'),0)
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 3 of 5']), 4, FailureHandling.OPTIONAL)) {
+    Mobile.tap(findTestObject('Object Repository/BackButtonStep3'), 0)
 }
 
 Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') : findTestData('TestData').getValue(4, 76)]), 
@@ -150,8 +182,8 @@ Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
 Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Please remove invalid special characters.']), 0)
 
-if(Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Step 3 of 5']),4,FailureHandling.OPTIONAL)) {
-	Mobile.tap(findTestObject('Object Repository/BackButtonStep3'),0)
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 3 of 5']), 4, FailureHandling.OPTIONAL)) {
+    Mobile.tap(findTestObject('Object Repository/BackButtonStep3'), 0)
 }
 
 Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') : findTestData('TestData').getValue(4, 77)]), 
@@ -206,8 +238,8 @@ Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
 
 Mobile.verifyElementNotExist(findTestObject('Text', [('Verify') : 'Please remove invalid special characters.']), 4)
 
-if(Mobile.verifyElementExist(findTestObject('Text',[('Verify'):'Step 3 of 5']),4,FailureHandling.OPTIONAL)) {
-	Mobile.tap(findTestObject('Object Repository/BackButtonStep3'),0)
+if (Mobile.verifyElementExist(findTestObject('Text', [('Verify') : 'Step 3 of 5']), 4, FailureHandling.OPTIONAL)) {
+    Mobile.tap(findTestObject('Object Repository/BackButtonStep3'), 0)
 }
 
 Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') : findTestData('TestData').getValue(4, 78)]), 
@@ -221,8 +253,8 @@ Mobile.verifyEqual(40, CityLimit.length())
 Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') : findTestData('TestData').getValue(4, 78)]), 
     City, 0)
 
-Mobile.dragAndDrop(findTestObject('Text',[('Verify'):'City']),
-	findTestObject('Text',[('Verify'):'Country']),10)
+//Mobile.dragAndDrop(findTestObject('Text',[('Verify'):'City']),
+//	findTestObject('Text',[('Verify'):'Country']),10)
 'Postcode'
 Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 79)]), 0), findTestData(
         'TestData').getValue(4, 79))
@@ -254,6 +286,12 @@ Mobile.setText(findTestObject('Object Repository/FollowingInput1', [('Verify') :
 
 Mobile.scrollToText('No')
 
+'State'
+Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 98)]), 0), findTestData(
+        'TestData').getValue(4, 98))
+
+State = Mobile.getText(findTestObject('FollowingText', [('Verify') : findTestData('TestData').getValue(4, 98)]), 0)
+
 Mobile.takeScreenshot('Sreenshot/Step2/Second.png')
 
 'Mailing Address'
@@ -267,12 +305,12 @@ Mobile.verifyEqual(Mobile.getText(findTestObject('Text', [('Verify') : findTestD
 'verify 2nd mailing address not exist'
 Mobile.verifyElementNotExist(findTestObject('Object Repository/2nd Field not exist'), 2, FailureHandling.CONTINUE_ON_FAILURE)
 
-Mobile.tap(findTestObject('Text', [('Verify') : 'Yes']), 0)
+Mobile.tap(findTestObject('Object Repository/RadioNo', [('No') : 1]), 0)
 
 'if yes address and mailing same shouldnt have field'
 Mobile.verifyElementNotExist(findTestObject('Object Repository/2nd Field not exist'), 2)
 
-Mobile.tap(findTestObject('Text', [('Verify') : 'No']), 0)
+Mobile.tap(findTestObject('Object Repository/RadioNo', [('No') : 2]), 0)
 
 Mobile.verifyElementExist(findTestObject('Object Repository/2nd Field not exist'), 0)
 
@@ -291,7 +329,7 @@ if (Choice == 'N') {
         Mobile.tap(findTestObject('Object Repository/FollowingText', [('Verify') : findTestData('TestData').getValue(4, 
                         75)]), 0)
 
-        scrollNew.text(findTestData('TestData').getValue(5, 75))
+        scrollNew.textDownSmall(findTestData('TestData').getValue(5, 75))
 
         'tap object'
         Mobile.tap(findTestObject('Text', [('Verify') : findTestData('TestData').getValue(4, 75)]), 0)
@@ -351,8 +389,9 @@ if (Choice == 'N') {
                         4, 79)]), findTestData('TestData').getValue(5, 79), 0)
     }
 } else {
-    Mobile.tap(findTestObject('Text', [('Verify') : 'Yes']), 0)
+    Mobile.tap(findTestObject('Object Repository/RadioNo', [('No') : 1]), 0)
 }
 
 Mobile.tap(findTestObject('Text', [('Verify') : 'Save & Next']), 0)
+
 
